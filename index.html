@@ -1,0 +1,4133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style> 
+        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif;  } 
+        * { box-sizing: border-box; } 
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @keyframes slideInLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } } @keyframes slideInRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } } @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } } @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-20px); } 60% { transform: translateY(-10px); } } @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } } @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+        /* CSS das Classes Globais */
+
+
+        /* CSS dos Efeitos Premium */
+
+/* ===== EFEITOS PARA BOTÕES ===== */
+
+/* Glow Azul (Free) */
+.efx-btn-glow-blue {
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 rgba(33, 150, 243, 0) !important;
+}
+.efx-btn-glow-blue:hover {
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.8) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Glow Verde (Free) */
+.efx-btn-glow-green {
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0) !important;
+}
+.efx-btn-glow-green:hover {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Preenchimento Direita (Free) */
+.efx-btn-fill-right {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.efx-btn-fill-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.efx-btn-fill-right:hover::before {
+    width: 100%;
+}
+
+/* Preenchimento Esquerda (Free) */
+.efx-btn-fill-left {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.efx-btn-fill-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.efx-btn-fill-left:hover::before {
+    width: 100%;
+}
+
+/* Preenchimento Cima (Free) */
+.efx-btn-fill-up {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.efx-btn-fill-up::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+.efx-btn-fill-up:hover::before {
+    height: 100%;
+}
+
+/* Preenchimento Baixo (Free) */
+.efx-btn-fill-down {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.efx-btn-fill-down::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+.efx-btn-fill-down:hover::before {
+    height: 100%;
+}
+
+/* Neumorfismo (Free) */
+.efx-btn-neumorph {
+    background: #f0f2f5 !important;
+    box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5) !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+[data-theme="dark"] .efx-btn-neumorph {
+    background: #1e1e1e !important;
+    box-shadow: 5px 5px 10px #121212, -5px -5px 10px #2a2a2a !important;
+}
+.efx-btn-neumorph:active {
+    box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Neumorfismo Inset (Free) */
+.efx-btn-neumorph-inset {
+    background: #f0f2f5 !important;
+    box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.5) !important;
+    border: none !important;
+}
+[data-theme="dark"] .efx-btn-neumorph-inset {
+    background: #1e1e1e !important;
+    box-shadow: inset 3px 3px 6px #121212, inset -3px -3px 6px #2a2a2a !important;
+}
+
+/* Borda Tracejada Animada (Free) */
+.efx-btn-outline-dash {
+    background: linear-gradient(90deg, currentColor 50%, transparent 50%) !important;
+    background-size: 20px 2px !important;
+    background-repeat: repeat-x !important;
+    background-position: bottom !important;
+    border: none !important;
+    padding-bottom: 4px !important;
+}
+.efx-btn-outline-dash:hover {
+    animation: dash-move 1s linear infinite !important;
+}
+@keyframes dash-move {
+    0% { background-position: 0 100%; }
+    100% { background-position: 20px 100%; }
+}
+
+/* Zoom ao Passar (Free) */
+.efx-btn-scale {
+    transition: transform 0.3s ease !important;
+}
+.efx-btn-scale:hover {
+    transform: scale(1.05) !important;
+    z-index: 10;
+}
+
+/* Sombra Suave (Free) */
+.efx-btn-shadow-soft {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-btn-shadow-soft:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+/* Sombra Média (Free) */
+.efx-btn-shadow-medium {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-btn-shadow-medium:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Borda que Cresce (Free) */
+.efx-btn-border-grow {
+    border: 2px solid transparent !important;
+    transition: border-width 0.2s ease !important;
+}
+.efx-btn-border-grow:hover {
+    border-width: 4px !important;
+    border-color: var(--primary) !important;
+}
+
+/* Borda com Offset (Free) */
+.efx-btn-outline-offset {
+    outline: 2px solid var(--primary) !important;
+    outline-offset: 2px !important;
+    transition: outline-offset 0.2s ease !important;
+}
+.efx-btn-outline-offset:hover {
+    outline-offset: 6px !important;
+}
+
+/* Ícone Giratório (Free) */
+.efx-btn-rotate-icon .material-icons {
+    transition: transform 0.3s ease !important;
+}
+.efx-btn-rotate-icon:hover .material-icons {
+    transform: rotate(360deg) !important;
+}
+
+/* Ícone Desliza Direita (Free) */
+.efx-btn-slide-icon-right .material-icons {
+    transition: transform 0.3s ease !important;
+}
+.efx-btn-slide-icon-right:hover .material-icons {
+    transform: translateX(5px) !important;
+}
+
+/* Ícone Desliza Esquerda (Free) */
+.efx-btn-slide-icon-left .material-icons {
+    transition: transform 0.3s ease !important;
+}
+.efx-btn-slide-icon-left:hover .material-icons {
+    transform: translateX(-5px) !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Cyberpunk (Premium) */
+.efx-btn-cyber {
+    border: 2px solid #0ff !important;
+    box-shadow: 0 0 10px #0ff, inset 0 0 10px #0ff !important;
+    background: rgba(0, 255, 255, 0.05) !important;
+    position: relative;
+    transition: all 0.3s ease !important;
+}
+.efx-btn-cyber::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #f0f;
+    border-left: 2px solid #f0f;
+}
+.efx-btn-cyber::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #f0f;
+    border-right: 2px solid #f0f;
+}
+.efx-btn-cyber:hover {
+    box-shadow: 0 0 20px #0ff, inset 0 0 20px #0ff;
+    transform: scale(1.02);
+}
+
+/* Efeito Líquido (Premium) */
+.efx-btn-liquid {
+    background: linear-gradient(45deg, #3498db, #9b59b6) !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.efx-btn-liquid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e74c3c, #f1c40f);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+.efx-btn-liquid:hover::before {
+    opacity: 1;
+}
+.efx-btn-liquid:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Ripple ao Clicar (Premium) */
+.efx-btn-ripple {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease !important;
+}
+.efx-btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+.efx-btn-ripple:active::after {
+    animation: ripple 0.4s ease-out;
+}
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Gradiente Móvel (Premium) */
+.efx-btn-gradient-shift {
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4) !important;
+    background-size: 300% 100% !important;
+    transition: background-position 0.5s ease !important;
+}
+.efx-btn-gradient-shift:hover {
+    background-position: 100% 0 !important;
+}
+
+/* Borda Neon Pulsante (Premium) */
+.efx-btn-neon-border {
+    border: 2px solid transparent !important;
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc) border-box !important;
+    animation: neon-border 3s linear infinite !important;
+}
+@keyframes neon-border {
+    0% { background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc) border-box; }
+    100% { background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc) border-box; }
+}
+
+/* Glitch Efeito (Premium) */
+.efx-btn-glitch {
+    position: relative;
+    color: white !important;
+    background: black !important;
+}
+.efx-btn-glitch::before,
+.efx-btn-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.efx-btn-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+.efx-btn-glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+    0% { clip: rect(32px, 9999px, 28px, 0); }
+    20% { clip: rect(13px, 9999px, 83px, 0); }
+    40% { clip: rect(74px, 9999px, 51px, 0); }
+    60% { clip: rect(98px, 9999px, 12px, 0); }
+    80% { clip: rect(3px, 9999px, 46px, 0); }
+    100% { clip: rect(62px, 9999px, 73px, 0); }
+}
+
+/* 3D Levantar (Premium) */
+.efx-btn-3d-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    box-shadow: 0 6px 0 #0b5e8c, 0 8px 10px rgba(0,0,0,0.2) !important;
+}
+.efx-btn-3d-lift:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 0 #0b5e8c, 0 12px 20px rgba(0,0,0,0.2) !important;
+}
+.efx-btn-3d-lift:active {
+    transform: translateY(4px) !important;
+    box-shadow: 0 2px 0 #0b5e8c, 0 5px 10px rgba(0,0,0,0.2) !important;
+}
+
+/* Múltiplas Sombras (Premium) */
+.efx-btn-shadow-multiple {
+    transition: all 0.3s ease !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+.efx-btn-shadow-multiple:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.2), 0 16px 32px rgba(0,0,0,0.2) !important;
+    transform: translateY(-2px);
+}
+
+/* Brilho Deslizante (Premium) */
+.efx-btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+.efx-btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+.efx-btn-shine:hover::before {
+    left: 100%;
+}
+
+/* Corte Diagonal (Premium) */
+.efx-btn-slice {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    overflow: hidden;
+}
+.efx-btn-slice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.efx-btn-slice:hover::before {
+    opacity: 1;
+}
+.efx-btn-slice:hover {
+    transform: skewX(-5deg) scale(1.02);
+}
+
+/* Borda RGB Animada (Premium) */
+.efx-btn-border-rgb {
+    border: 3px solid transparent !important;
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, repeating-linear-gradient(90deg, red, green, blue, red) border-box !important;
+    background-size: 300% 100% !important;
+    animation: rgb-border 3s linear infinite !important;
+}
+@keyframes rgb-border {
+    0% { background-position: 0% 0; }
+    100% { background-position: 300% 0; }
+}
+
+/* Vidro com Brilho (Premium) */
+.efx-btn-glass-morphism {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+}
+.efx-btn-glass-morphism:hover {
+    background: rgba(255,255,255,0.25) !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+/* Neon Realista (Premium) */
+.efx-btn-neon-real {
+    border: none !important;
+    background: #111 !important;
+    color: #fff !important;
+    box-shadow: 0 0 5px #0ff, 0 0 25px #0ff, 0 0 50px #0ff, 0 0 100px #0ff !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-btn-neon-real:hover {
+    box-shadow: 0 0 10px #0ff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 160px #0ff !important;
+}
+
+/* Cyberpunk Pulse (Premium) */
+.efx-btn-cyber-pulse {
+    background: #000 !important;
+    border: 2px solid #0f0 !important;
+    color: #0f0 !important;
+    animation: cyber-pulse 1.5s infinite !important;
+}
+@keyframes cyber-pulse {
+    0% { box-shadow: 0 0 5px #0f0; }
+    50% { box-shadow: 0 0 20px #0f0, 0 0 40px #0f0; }
+    100% { box-shadow: 0 0 5px #0f0; }
+}
+
+/* Glass Shine (Premium) */
+.efx-btn-glass-shine {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3)) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    position: relative;
+    overflow: hidden;
+}
+.efx-btn-glass-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(30deg);
+    animation: glass-shine 3s infinite;
+}
+@keyframes glass-shine {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Liquid Fill (Premium) */
+.efx-btn-liquid-fill {
+    background: linear-gradient(90deg, #ff6b6b 0%, #ff6b6b 50%, #4ecdc4 50%, #4ecdc4 100%) !important;
+    background-size: 200% 100% !important;
+    transition: background-position 0.4s ease !important;
+}
+.efx-btn-liquid-fill:hover {
+    background-position: -100% 0 !important;
+}
+
+/* 3D Push (Premium) */
+.efx-btn-3d-push {
+    transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+    box-shadow: 0 8px 0 #0b5e8c !important;
+}
+.efx-btn-3d-push:active {
+    transform: translateY(8px) !important;
+    box-shadow: 0 0 0 #0b5e8c !important;
+}
+
+/* Borda Gradiente (Premium) */
+.efx-btn-gradient-border {
+    border: 3px solid transparent !important;
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(135deg, #f093fb, #f5576c) border-box !important;
+}
+
+/* Neon Glow Duplo (Premium) */
+.efx-btn-neon-glow {
+    border: none !important;
+    background: #111 !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-btn-neon-glow:hover {
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ff00ff !important;
+}
+
+/* Arco-Íris Móvel (Premium) */
+.efx-btn-rainbow-shift {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) !important;
+    background-size: 400% 100% !important;
+    animation: rainbow-move 3s linear infinite !important;
+}
+@keyframes rainbow-move {
+    0% { background-position: 0% 0; }
+    100% { background-position: 400% 0; }
+}
+
+/* Metal 3D (Premium) */
+.efx-btn-metal-3d {
+    background: linear-gradient(135deg, #aaa, #eee, #aaa) !important;
+    border: none !important;
+    box-shadow: 0 5px 0 #777, 0 8px 10px rgba(0,0,0,0.2) !important;
+    transition: all 0.2s ease !important;
+}
+.efx-btn-metal-3d:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 0 #777, 0 12px 20px rgba(0,0,0,0.2) !important;
+}
+.efx-btn-metal-3d:active {
+    transform: translateY(5px) !important;
+    box-shadow: 0 3px 0 #777, 0 5px 10px rgba(0,0,0,0.2) !important;
+}
+
+/* Zoom com Brilho (Premium) */
+.efx-btn-hover-zoom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.efx-btn-hover-zoom:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+}
+
+/* Pulse Constante (Premium) */
+.efx-btn-pulse {
+    animation: pulse-btn 2s infinite !important;
+}
+@keyframes pulse-btn {
+    0% { transform: scale(1); box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,0,0,0.2); }
+    100% { transform: scale(1); box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+}
+
+/* Sombra com Glow (Premium) */
+.efx-btn-shadow-glow {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-btn-shadow-glow:hover {
+    box-shadow: 0 10px 30px rgba(33,150,243,0.4), 0 0 0 2px rgba(33,150,243,0.2) !important;
+}
+
+/* Flutuação (Premium) */
+.efx-btn-float {
+    animation: float 3s ease-in-out infinite !important;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Borda Brilhante (Premium) */
+.efx-btn-border-glow {
+    border: 2px solid transparent !important;
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(45deg, #ff6b6b, #4ecdc4) border-box !important;
+    transition: background 0.3s ease !important;
+}
+.efx-btn-border-glow:hover {
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(45deg, #4ecdc4, #ff6b6b) border-box !important;
+}
+
+/* ===== EFEITOS PARA TEXTOS ===== */
+
+/* Gradiente Azul/Verde (Free) */
+.efx-text-grad-blue {
+    background: linear-gradient(to right, #2563eb, #06b6d4) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Gradiente Roxo/Rosa (Free) */
+.efx-text-grad-purple {
+    background: linear-gradient(to right, #9333ea, #db2777) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Texto Espaçado (Free) */
+.efx-text-spacing {
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+}
+
+/* Texto com Contorno (Free) */
+.efx-text-stroke {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent !important;
+}
+
+/* Marca Texto Amarelo (Free) */
+.efx-text-highlight {
+    background: linear-gradient(180deg, transparent 60%, rgba(253, 224, 71, 0.8) 0);
+    display: inline;
+}
+
+/* Sombra Suave no Texto (Free) */
+.efx-text-shadow-soft {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Texto Maiúsculo (Free) */
+.efx-text-uppercase {
+    text-transform: uppercase !important;
+}
+
+/* Texto Minúsculo (Free) */
+.efx-text-lowercase {
+    text-transform: lowercase !important;
+}
+
+/* Texto Capitalizado (Free) */
+.efx-text-capitalize {
+    text-transform: capitalize !important;
+}
+
+/* Sublinhado Decorativo (Free) */
+.efx-text-underline {
+    text-decoration: underline !important;
+    text-decoration-style: wavy !important;
+    text-decoration-color: var(--primary) !important;
+    text-underline-offset: 4px !important;
+}
+
+/* Múltiplas Sombras (Free) */
+.efx-text-shadow-multiple {
+    text-shadow: 2px 2px 0 #ccc, 4px 4px 0 #999 !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Brilho Varrendo (Premium) */
+.efx-text-shimmer {
+    background: linear-gradient(90deg, #94a3b8 0%, #ffffff 50%, #94a3b8 100%) !important;
+    background-size: 200% auto !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    animation: shimmer 2.5s linear infinite !important;
+    display: inline-block;
+    font-weight: 800;
+}
+[data-theme="light"] .efx-text-shimmer {
+    background: linear-gradient(90deg, #475569 0%, #0f172a 50%, #475569 100%) !important;
+}
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+/* Texto Neon Ciber (Premium) */
+.efx-text-neon {
+    color: #fff !important;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff !important;
+}
+
+/* Efeito Glitch (Premium) */
+.efx-text-glitch {
+    position: relative;
+    display: inline-block;
+}
+.efx-text-glitch::before,
+.efx-text-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+.efx-text-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+.efx-text-glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+    0% { clip: rect(32px, 9999px, 28px, 0); }
+    20% { clip: rect(13px, 9999px, 83px, 0); }
+    40% { clip: rect(74px, 9999px, 51px, 0); }
+    60% { clip: rect(98px, 9999px, 12px, 0); }
+    80% { clip: rect(3px, 9999px, 46px, 0); }
+    100% { clip: rect(62px, 9999px, 73px, 0); }
+}
+
+/* Texto Holográfico (Premium) */
+.efx-text-holo {
+    background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3) !important;
+    background-size: 400% 100% !important;
+    animation: holo 8s linear infinite !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+    font-weight: bold;
+}
+@keyframes holo {
+    0% { background-position: 0 0; }
+    100% { background-position: -400% 0; }
+}
+
+/* Texto 3D Profundo (Premium) */
+.efx-text-3d {
+    color: #e0e0e0;
+    text-shadow: 1px 1px 1px #919191,
+                 1px 2px 1px #919191,
+                 1px 3px 1px #919191,
+                 1px 4px 1px #919191,
+                 1px 18px 6px rgba(16,16,16,0.4);
+}
+
+/* Gradiente Fogo (Premium) */
+.efx-text-fire {
+    background: linear-gradient(to top, #ff0844 0%, #ffb199 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Gradiente Pôr do Sol (Premium) */
+.efx-text-sunset {
+    background: linear-gradient(to right, #fa709a 0%, #fee140 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Gradiente Oceano (Premium) */
+.efx-text-ocean {
+    background: linear-gradient(to right, #2b6c91, #60a5fa, #2dd4bf) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Gradiente Floresta (Premium) */
+.efx-text-forest {
+    background: linear-gradient(to right, #134e5e, #71b280) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+}
+
+/* Arco-Íris Animado (Premium) */
+.efx-text-rainbow {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) !important;
+    background-size: 400% 100% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: rainbow 6s linear infinite !important;
+}
+@keyframes rainbow {
+    0% { background-position: 0% 0; }
+    100% { background-position: 400% 0; }
+}
+
+/* Efeito Metal (Premium) */
+.efx-text-metal {
+    background: linear-gradient(135deg, #cfcfcf, #e8e8e8, #a0a0a0, #e8e8e8) !important;
+    background-size: 200% 200% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: metal 4s ease infinite !important;
+}
+@keyframes metal {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Brilho Pulsante (Premium) */
+.efx-text-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite !important;
+}
+@keyframes glow-pulse {
+    0% { text-shadow: 0 0 5px rgba(33,150,243,0.5); }
+    50% { text-shadow: 0 0 20px rgba(33,150,243,1), 0 0 30px rgba(33,150,243,0.8); }
+    100% { text-shadow: 0 0 5px rgba(33,150,243,0.5); }
+}
+
+/* Contorno Animado (Premium) */
+.efx-text-stroke-anim {
+    -webkit-text-stroke: 2px transparent;
+    animation: stroke-color 3s linear infinite !important;
+}
+@keyframes stroke-color {
+    0% { -webkit-text-stroke-color: #ff0000; }
+    33% { -webkit-text-stroke-color: #00ff00; }
+    66% { -webkit-text-stroke-color: #0000ff; }
+    100% { -webkit-text-stroke-color: #ff0000; }
+}
+
+/* Desfocar no Hover (Premium) */
+.efx-text-blur-hover {
+    transition: filter 0.3s ease !important;
+    filter: blur(0);
+}
+.efx-text-blur-hover:hover {
+    filter: blur(4px) !important;
+}
+
+/* NOVOS EFEITOS PREMIUM */
+
+/* Neon Glow Realista (Premium) */
+.efx-text-neon-glow {
+    color: #fff !important;
+    text-shadow: 0 0 7px #fff,
+                 0 0 10px #fff,
+                 0 0 21px #fff,
+                 0 0 42px #0ff,
+                 0 0 82px #0ff,
+                 0 0 92px #0ff,
+                 0 0 102px #0ff,
+                 0 0 151px #0ff !important;
+}
+
+/* Gradiente Animado (Premium) */
+.efx-text-gradient-shift {
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4) !important;
+    background-size: 400% 100% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: gradient-shift 6s ease infinite !important;
+}
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contorno Iluminado (Premium) */
+.efx-text-outline-glow {
+    color: white !important;
+    -webkit-text-stroke: 2px black !important;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan !important;
+}
+
+/* Glitch Suave (Premium) */
+.efx-text-glitch-soft {
+    position: relative;
+    display: inline-block;
+    animation: glitch-soft 3s infinite;
+}
+@keyframes glitch-soft {
+    0% { transform: translate(0); }
+    2% { transform: translate(-1px, 1px); }
+    4% { transform: translate(1px, -1px); }
+    6% { transform: translate(0); }
+    100% { transform: translate(0); }
+}
+.efx-text-glitch-soft::before,
+.efx-text-glitch-soft::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+.efx-text-glitch-soft::before {
+    left: 1px;
+    text-shadow: -1px 0 red;
+    animation: glitch-soft-before 3s infinite;
+}
+.efx-text-glitch-soft::after {
+    left: -1px;
+    text-shadow: -1px 0 blue;
+    animation: glitch-soft-after 3s infinite;
+}
+@keyframes glitch-soft-before {
+    0% { clip-path: inset(0 0 0 0); }
+    5% { clip-path: inset(10% 0 30% 0); }
+    10% { clip-path: inset(40% 0 10% 0); }
+    15% { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+@keyframes glitch-soft-after {
+    0% { clip-path: inset(0 0 0 0); }
+    5% { clip-path: inset(30% 0 10% 0); }
+    10% { clip-path: inset(10% 0 40% 0); }
+    15% { clip-path: inset(0 0 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+/* Brilho Metálico (Premium) */
+.efx-text-metal-shine {
+    background: linear-gradient(135deg, #aaa 0%, #fff 50%, #aaa 100%) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: metal-shine 2s linear infinite !important;
+}
+@keyframes metal-shine {
+    to { background-position: 200% center; }
+}
+
+/* Efeito Relevo (Premium) */
+.efx-text-emboss {
+    color: #888 !important;
+    text-shadow: 1px 1px 1px #fff, -1px -1px 1px #333 !important;
+}
+
+/* Retro/Vintage (Premium) */
+.efx-text-retro {
+    color: #b8860b !important;
+    text-shadow: 2px 2px 0 #ffd700, 4px 4px 0 #8b4513 !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Gelo (Premium) */
+.efx-text-ice {
+    color: #b0e0e6 !important;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 2px 2px 2px #333 !important;
+}
+
+/* Lava (Premium) */
+.efx-text-lava {
+    color: #ff4500 !important;
+    text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00, 0 0 20px #ff4500, 2px 2px 2px #8b0000 !important;
+}
+
+/* Neon Duplo (Premium) */
+.efx-text-neon-dual {
+    color: #fff !important;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff,
+                 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff !important;
+}
+
+/* Matrix (Premium) */
+.efx-text-matrix {
+    color: #0f0 !important;
+    text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0 !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Chuva no Texto (Premium) */
+.efx-text-rain {
+    background: linear-gradient(180deg, #00ffff, #0000ff) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    position: relative;
+}
+.efx-text-rain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 10px);
+    pointer-events: none;
+    animation: rain 0.5s linear infinite;
+}
+@keyframes rain {
+    from { background-position: 0 0; }
+    to { background-position: 0 20px; }
+}
+
+/* Vaga-lumes (Premium) */
+.efx-text-firefly {
+    position: relative;
+    display: inline-block;
+    color: #ffd700;
+}
+.efx-text-firefly::before,
+.efx-text-firefly::after {
+    content: '✨';
+    position: absolute;
+    font-size: 0.8em;
+    opacity: 0;
+    animation: firefly 2s infinite;
+}
+.efx-text-firefly::before {
+    top: -10px;
+    left: -10px;
+    animation-delay: 0.5s;
+}
+.efx-text-firefly::after {
+    bottom: -10px;
+    right: -10px;
+}
+@keyframes firefly {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* ===== EFEITOS PARA FUNDOS ===== */
+
+/* Listras (Free) */
+.efx-bg-stripes {
+    background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 10px, transparent 10px, transparent 20px) !important;
+}
+[data-theme="dark"] .efx-bg-stripes {
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 10px, transparent 10px, transparent 20px) !important;
+}
+
+/* Bolinhas (Free) */
+.efx-bg-dots {
+    background-image: radial-gradient(rgba(0,0,0,0.1) 2px, transparent 2px) !important;
+    background-size: 20px 20px !important;
+}
+[data-theme="dark"] .efx-bg-dots {
+    background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px) !important;
+}
+
+/* Xadrez (Free) */
+.efx-bg-checkerboard {
+    background-image: linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%), linear-gradient(-45deg, rgba(0,0,0,0.05) 25%, transparent 25%) !important;
+    background-size: 20px 20px !important;
+    background-position: 0 0, 0 10px !important;
+}
+[data-theme="dark"] .efx-bg-checkerboard {
+    background-image: linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%), linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%) !important;
+}
+
+/* Linhas Diagonais (Free) */
+.efx-bg-diagonal-lines {
+    background: repeating-linear-gradient(45deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05) 5px, transparent 5px, transparent 10px) !important;
+}
+[data-theme="dark"] .efx-bg-diagonal-lines {
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 5px, transparent 5px, transparent 10px) !important;
+}
+
+/* Gradiente Linear (Free) */
+.efx-bg-gradient-linear {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Gradiente Radial (Free) */
+.efx-bg-gradient-radial {
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #4ecdc4) !important;
+}
+
+/* Ruído Granulado (Free) */
+.efx-bg-noise {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-noise::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4xIiAvPjwvc3ZnPg==');
+    background-repeat: repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Grade Simples (Free) */
+.efx-bg-grid {
+    background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+/* Polka Dots (Free) */
+.efx-bg-polka-dots {
+    background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
+}
+
+/* Zigue-zague (Free) */
+.efx-bg-zigzag {
+    background: linear-gradient(135deg, rgba(0,0,0,0.05) 25%, transparent 25%) -10px 0, linear-gradient(225deg, rgba(0,0,0,0.05) 25%, transparent 25%) -10px 0, linear-gradient(315deg, rgba(0,0,0,0.05) 25%, transparent 25%), linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%) !important;
+    background-size: 20px 20px !important;
+    background-color: transparent !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Mesh Gradient (Premium) */
+.efx-bg-mesh-gradient {
+    background: linear-gradient(125deg, #fd7e14, #f03e3e, #d6336c, #7048e8, #1098ad) !important;
+    background-size: 400% 400% !important;
+    animation: mesh 15s ease infinite !important;
+}
+@keyframes mesh {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Gradiente Animado (Premium) */
+.efx-bg-animated-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) !important;
+    background-size: 400% 400% !important;
+    animation: gradientBG 10s ease infinite !important;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Partículas Flutuantes (Premium) */
+.efx-bg-particle {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-particle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 1px, transparent 1px),
+                      radial-gradient(circle at 30% 70%, rgba(255,255,255,0.6) 1px, transparent 1px),
+                      radial-gradient(circle at 70% 30%, rgba(255,255,255,0.7) 1px, transparent 1px),
+                      radial-gradient(circle at 90% 80%, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 200px 200px, 300px 300px, 250px 250px, 280px 280px;
+    background-repeat: repeat;
+    animation: particleMove 20s linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+}
+@keyframes particleMove {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 200px 200px, 300px 300px, 250px 250px, 280px 280px; }
+}
+
+/* Ondas Suaves (Premium) */
+.efx-bg-wave {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 20px);
+    animation: wave 10s linear infinite;
+    pointer-events: none;
+}
+@keyframes wave {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
+}
+
+/* Efeito CRT (Premium) */
+.efx-bg-crt {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-crt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    animation: crt-flicker 0.1s infinite;
+}
+@keyframes crt-flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.8; }
+}
+
+/* Fundo Blueprint (Premium) */
+.efx-bg-blueprint {
+    background-color: #1a3b5d !important;
+    background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+    border: none !important;
+    position: relative;
+}
+.efx-bg-blueprint::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Circuito Eletrônico (Premium) */
+.efx-bg-circuit {
+    background-color: #0a192f !important;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10 L90 10 M10 50 L90 50 M10 90 L90 90 M10 10 L10 90 M50 10 L50 90 M90 10 L90 90" stroke="rgba(100,255,218,0.1)" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="4" fill="%2364ffda" opacity="0.2"/><circle cx="90" cy="90" r="4" fill="%2364ffda" opacity="0.2"/></svg>');
+    background-repeat: repeat;
+}
+
+/* Aurora Boreal (Premium) */
+.efx-bg-aurora {
+    background: linear-gradient(125deg, #1b3b4f, #2a5c6e, #3b7b8a, #4c9a9f, #6bb8b0) !important;
+    background-size: 400% 400% !important;
+    animation: aurora 12s ease infinite !important;
+    position: relative;
+}
+.efx-bg-aurora::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(120, 255, 200, 0.2), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(200, 150, 255, 0.15), transparent 60%);
+    pointer-events: none;
+}
+@keyframes aurora {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Céu Estrelado (Premium) */
+.efx-bg-stars {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 80px 120px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 50px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 200px 180px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 250px 80px, #87ceeb, rgba(0,0,0,0));
+    background-size: 300px 300px, 400px 400px, 350px 350px, 450px 450px, 500px 500px, 380px 380px;
+    background-repeat: repeat;
+    animation: stars 30s linear infinite;
+    opacity: 0.8;
+    pointer-events: none;
+}
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+/* NOVOS EFEITOS PREMIUM */
+
+/* Mesh Gradiente Animado (Premium) */
+.efx-bg-mesh-animated {
+    background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe, #00f2fe) !important;
+    background-size: 400% 400% !important;
+    animation: mesh-animated 8s ease infinite !important;
+}
+@keyframes mesh-animated {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Padrão Geométrico (Premium) */
+.efx-bg-geo-pattern {
+    background-color: #333 !important;
+    background-image: linear-gradient(30deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444),
+                      linear-gradient(150deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444),
+                      linear-gradient(30deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444),
+                      linear-gradient(150deg, #444 12%, transparent 12.5%, transparent 87%, #444 87.5%, #444),
+                      linear-gradient(60deg, #777 25%, transparent 25.5%, transparent 75%, #777 75%, #777),
+                      linear-gradient(60deg, #777 25%, transparent 25.5%, transparent 75%, #777 75%, #777);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Grid Isométrico (Premium) */
+.efx-bg-isometric-grid {
+    background: repeating-linear-gradient(30deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 30px),
+                repeating-linear-gradient(150deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 30px) !important;
+}
+
+/* Cyber Grid (Premium) */
+.efx-bg-cyber-grid {
+    background-color: #0a0f1e !important;
+    background-image: linear-gradient(#00ffff 1px, transparent 1px), linear-gradient(90deg, #00ffff 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
+    position: relative;
+}
+.efx-bg-cyber-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(0,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Líquido em Movimento (Premium) */
+.efx-bg-liquid {
+    background: linear-gradient(125deg, #43e97b, #38f9d7, #4facfe, #00f2fe) !important;
+    background-size: 400% 400% !important;
+    animation: liquid 12s ease infinite !important;
+}
+@keyframes liquid {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Ripple (Premium) */
+.efx-bg-ripple {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 20%);
+    transform: translate(-50%, -50%);
+    animation: ripple-bg 5s ease-out infinite;
+    pointer-events: none;
+}
+@keyframes ripple-bg {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* Glitch Background (Premium) */
+.efx-bg-glitch {
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-glitch::before,
+.efx-bg-glitch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.2;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+.efx-bg-glitch::before {
+    left: 2px;
+    background-color: rgba(255,0,0,0.3);
+    animation: glitch-bg 2s infinite;
+}
+.efx-bg-glitch::after {
+    left: -2px;
+    background-color: rgba(0,0,255,0.3);
+    animation: glitch-bg 2.5s infinite reverse;
+}
+@keyframes glitch-bg {
+    0% { transform: translate(0); }
+    20% { transform: translate(-5px, 2px); }
+    40% { transform: translate(5px, -2px); }
+    60% { transform: translate(-2px, 5px); }
+    80% { transform: translate(2px, -5px); }
+    100% { transform: translate(0); }
+}
+
+/* Hexágonos (Premium) */
+.efx-bg-hexagon {
+    background-color: #1a1a2e !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="100" viewBox="0 0 56 100"><path d="M28 0 L56 25 L56 75 L28 100 L0 75 L0 25 Z" stroke="rgba(100,255,218,0.1)" fill="transparent" stroke-width="1"/></svg>');
+    background-repeat: repeat;
+    background-size: 56px 100px;
+}
+
+/* Triângulos 3D (Premium) */
+.efx-bg-triangles {
+    background-color: #0f0f1f !important;
+    background-image: linear-gradient(30deg, #2a2a4a 12%, transparent 12.5%, transparent 87%, #2a2a4a 87.5%, #2a2a4a),
+                      linear-gradient(150deg, #2a2a4a 12%, transparent 12.5%, transparent 87%, #2a2a4a 87.5%, #2a2a4a);
+    background-size: 60px 105px;
+    background-position: 0 0, 0 0;
+}
+
+/* Linhas Onduladas (Premium) */
+.efx-bg-wavy-lines {
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 20px);
+    animation: wavy 10s linear infinite;
+}
+@keyframes wavy {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 40px; }
+}
+
+/* Mesh Gradient 2 (Premium) */
+.efx-bg-gradient-mesh-2 {
+    background: linear-gradient(125deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3) !important;
+    background-size: 400% 400% !important;
+    animation: mesh2 10s ease infinite !important;
+}
+@keyframes mesh2 {
+    0% { background-position: 0% 0%; }
+    33% { background-position: 100% 0%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Fogo (Premium) */
+.efx-bg-fire {
+    background: linear-gradient(135deg, #ff4e50, #f9d423) !important;
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-fire::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,140,0,0.3) 0%, transparent 50%);
+    animation: fire 8s ease infinite;
+    pointer-events: none;
+}
+@keyframes fire {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Água (Premium) */
+.efx-bg-water {
+    background: linear-gradient(45deg, #2980b9, #6dd5fa) !important;
+    position: relative;
+    overflow: hidden;
+}
+.efx-bg-water::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 2px, transparent 2px, transparent 20px);
+    animation: water 15s linear infinite;
+    pointer-events: none;
+}
+@keyframes water {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== EFEITOS PARA CARDS ===== */
+
+/* Sombra Suave (Free) */
+.efx-card-shadow-soft {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-card-shadow-soft:hover {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05) !important;
+}
+
+/* Sombra Média (Free) */
+.efx-card-shadow-medium {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-card-shadow-medium:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04) !important;
+}
+
+/* Sombra Brutal (Free) */
+.efx-card-shadow-hard {
+    box-shadow: 8px 8px 0px 0px #0f172a !important;
+    border: 2px solid #0f172a !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.efx-card-shadow-hard:active {
+    transform: translate(4px, 4px) !important;
+    box-shadow: 4px 4px 0px 0px #0f172a !important;
+}
+
+/* Borda no Hover (Free) */
+.efx-card-border-hover {
+    transition: border-color 0.3s ease !important;
+    border: 2px solid transparent !important;
+}
+.efx-card-border-hover:hover {
+    border-color: var(--primary) !important;
+}
+
+/* Zoom no Hover (Free) */
+.efx-card-scale-hover {
+    transition: transform 0.3s ease !important;
+}
+.efx-card-scale-hover:hover {
+    transform: scale(1.02) !important;
+}
+
+/* Neumorfismo (Free) */
+.efx-card-neumorph {
+    background: #f0f2f5 !important;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255,0.5) !important;
+    border-radius: 20px;
+    border: none !important;
+}
+[data-theme="dark"] .efx-card-neumorph {
+    background: #1e1e1e !important;
+    box-shadow: 8px 8px 16px #121212, -8px -8px 16px #2a2a2a !important;
+}
+
+/* Neumorfismo Inset (Free) */
+.efx-card-neumorph-inset {
+    background: #f0f2f5 !important;
+    box-shadow: inset 9px 9px 16px rgb(163,177,198,0.6), inset -9px -9px 16px rgba(255,255,255,0.5) !important;
+    border-radius: 20px;
+    border: none !important;
+}
+[data-theme="dark"] .efx-card-neumorph-inset {
+    background: #1e1e1e !important;
+    box-shadow: inset 8px 8px 16px #121212, inset -8px -8px 16px #2a2a2a !important;
+}
+
+/* Borda Arredondada (Free) */
+.efx-card-border-radius {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+/* Contorno Simples (Free) */
+.efx-card-outline {
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 0 0 2px rgba(33,150,243,0.2) !important;
+}
+
+/* Fundo Gradiente (Free) */
+.efx-card-gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Vidro Premium */
+.efx-card-glass {
+    background: rgba(255,255,255,0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+}
+
+/* Tilt 3D (Premium) */
+.efx-card-tilt-3d {
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    transform-style: preserve-3d !important;
+    perspective: 1000px !important;
+}
+.efx-card-tilt-3d:hover {
+    transform: rotateX(10deg) rotateY(-10deg) scale(1.02) !important;
+    box-shadow: -15px 15px 25px rgba(0,0,0,0.15) !important;
+    z-index: 10;
+}
+
+/* Borda Animada RGB (Premium) */
+.efx-card-border-anim {
+    position: relative;
+    border: none !important;
+    z-index: 1;
+}
+.efx-card-border-anim::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    z-index: -1;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc);
+    background-size: 400%;
+    animation: border-anim 6s linear infinite;
+    opacity: 0.8;
+}
+.efx-card-border-anim::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+}
+@keyframes border-anim {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Brilho Deslizante (Premium) */
+.efx-card-shine {
+    position: relative;
+    overflow: hidden;
+}
+.efx-card-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+.efx-card-shine:hover::before {
+    left: 100%;
+}
+
+/* Flip Horizontal (Premium) */
+.efx-card-flip-x {
+    transition: transform 0.6s !important;
+    transform-style: preserve-3d !important;
+}
+.efx-card-flip-x:hover {
+    transform: rotateX(180deg) !important;
+}
+
+/* Flip Vertical (Premium) */
+.efx-card-flip-y {
+    transition: transform 0.6s !important;
+    transform-style: preserve-3d !important;
+}
+.efx-card-flip-y:hover {
+    transform: rotateY(180deg) !important;
+}
+
+/* Zoom Interno (Premium) */
+.efx-card-zoom-in {
+    overflow: hidden;
+}
+.efx-card-zoom-in img {
+    transition: transform 0.3s ease !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.efx-card-zoom-in:hover img {
+    transform: scale(1.1) !important;
+}
+
+/* Glitch Card (Premium) */
+.efx-card-glitch {
+    position: relative;
+    overflow: hidden;
+}
+.efx-card-glitch::before,
+.efx-card-glitch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+.efx-card-glitch::before {
+    left: 2px;
+    background-color: rgba(255,0,0,0.3);
+    animation: glitch-card 3s infinite linear alternate-reverse;
+}
+.efx-card-glitch::after {
+    left: -2px;
+    background-color: rgba(0,0,255,0.3);
+    animation: glitch-card 2.5s infinite linear alternate-reverse;
+}
+@keyframes glitch-card {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Cyber Card (Premium) */
+.efx-card-cyber {
+    border: 2px solid #0ff !important;
+    box-shadow: 0 0 10px #0ff, inset 0 0 10px #0ff !important;
+    background: rgba(0, 255, 255, 0.02) !important;
+    position: relative;
+}
+.efx-card-cyber::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #f0f;
+    border-left: 2px solid #f0f;
+}
+.efx-card-cyber::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #f0f;
+    border-right: 2px solid #f0f;
+}
+
+/* Borda Gradiente (Premium) */
+.efx-card-gradient-border {
+    border: 3px solid transparent !important;
+    background: linear-gradient(var(--panel-bg), var(--panel-bg)) padding-box, linear-gradient(135deg, #f093fb, #f5576c) border-box !important;
+}
+
+/* Levantar 3D (Premium) */
+.efx-card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+.efx-card-lift:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+}
+
+/* NOVOS EFEITOS PREMIUM */
+
+/* Glassmorphism Profundo (Premium) */
+.efx-card-glass-deep {
+    background: rgba(255,255,255,0.05) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+}
+
+/* Neumorphism Moderno (Premium) */
+.efx-card-neumorph-modern {
+    background: #e0e5ec !important;
+    box-shadow: 12px 12px 24px rgba(163,177,198,0.6), -12px -12px 24px rgba(255,255,255,0.8) !important;
+    border-radius: 30px;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+.efx-card-neumorph-modern:hover {
+    box-shadow: 6px 6px 12px rgba(163,177,198,0.6), -6px -6px 12px rgba(255,255,255,0.8) !important;
+}
+[data-theme="dark"] .efx-card-neumorph-modern {
+    background: #2d2d2d !important;
+    box-shadow: 12px 12px 24px #1a1a1a, -12px -12px 24px #404040 !important;
+}
+
+/* Tilt 3D Avançado (Premium) */
+.efx-card-tilt-advanced {
+    transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+    transform-style: preserve-3d !important;
+    perspective: 1200px !important;
+    will-change: transform;
+}
+.efx-card-tilt-advanced:hover {
+    transform: rotateX(15deg) rotateY(15deg) scale(1.03) !important;
+    box-shadow: -20px 20px 30px rgba(0,0,0,0.2) !important;
+}
+
+/* Borda com Glow (Premium) */
+.efx-card-border-glow {
+    border: 2px solid transparent !important;
+    box-shadow: 0 0 15px var(--primary) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-card-border-glow:hover {
+    box-shadow: 0 0 30px var(--primary) !important;
+}
+
+/* Morphing Card (Premium) */
+.efx-card-morph {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    border-radius: 16px;
+}
+.efx-card-morph:hover {
+    border-radius: 50% 20% / 40% 60% !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+    transform: scale(1.05) rotate(2deg) !important;
+}
+
+/* Card Pulsante (Premium) */
+.efx-card-pulse {
+    animation: card-pulse 2s infinite !important;
+}
+@keyframes card-pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    50% { transform: scale(1.02); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+}
+
+/* Rotação 3D (Premium) */
+.efx-card-rotate {
+    transition: transform 0.8s !important;
+    transform-style: preserve-3d;
+}
+.efx-card-rotate:hover {
+    transform: rotateY(360deg) !important;
+}
+
+/* Reflexo (Premium) */
+.efx-card-reflect {
+    position: relative;
+    overflow: hidden;
+}
+.efx-card-reflect::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(30deg);
+    animation: reflect 3s infinite;
+}
+@keyframes reflect {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    50% { transform: translateX(100%) rotate(30deg); }
+    100% { transform: translateX(200%) rotate(30deg); }
+}
+
+/* Gradiente no Hover (Premium) */
+.efx-card-gradient-hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    transition: background 0.3s ease !important;
+}
+.efx-card-gradient-hover:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+/* Sombra Colorida (Premium) */
+.efx-card-shadow-colored {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-card-shadow-colored:hover {
+    box-shadow: 0 20px 30px -10px rgba(255, 75, 75, 0.5), 0 0 0 2px rgba(255,75,75,0.2) !important;
+}
+
+/* Perspectiva 3D (Premium) */
+.efx-card-3d-perspective {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    transition: transform 0.5s ease !important;
+}
+.efx-card-3d-perspective:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(5deg) translateZ(20px) !important;
+}
+
+/* Flutuação (Premium) */
+.efx-card-float {
+    animation: float 3s ease-in-out infinite !important;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Card Fatiado (Premium) */
+.efx-card-slice {
+    position: relative;
+    overflow: hidden;
+}
+.efx-card-slice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+.efx-card-slice:hover::before {
+    transform: translateX(100%);
+}
+
+/* Múltiplas Sombras (Premium) */
+.efx-card-multi-shadow {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05),
+                0 2px 4px rgba(0,0,0,0.05),
+                0 4px 8px rgba(0,0,0,0.05),
+                0 8px 16px rgba(0,0,0,0.05),
+                0 16px 32px rgba(0,0,0,0.05) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-card-multi-shadow:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1),
+                0 4px 8px rgba(0,0,0,0.1),
+                0 8px 16px rgba(0,0,0,0.1),
+                0 16px 32px rgba(0,0,0,0.1),
+                0 32px 64px rgba(0,0,0,0.1) !important;
+}
+
+/* ===== EFEITOS PARA UI (INPUTS, SWITCHES, TOGGLES) ===== */
+
+/* Input Sublinhado (Free) */
+.efx-input-underline input,
+.efx-input-underline textarea,
+.efx-input-underline select {
+    border: none !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    transition: border-color 0.3s ease !important;
+}
+.efx-input-underline input:focus,
+.efx-input-underline textarea:focus,
+.efx-input-underline select:focus {
+    border-bottom-color: var(--primary) !important;
+    outline: none !important;
+}
+
+/* Borda que Cresce (Free) */
+.efx-input-border-grow input,
+.efx-input-border-grow textarea,
+.efx-input-border-grow select {
+    border: 2px solid var(--border-color) !important;
+    transition: border-width 0.3s ease !important;
+}
+.efx-input-border-grow input:focus,
+.efx-input-border-grow textarea:focus,
+.efx-input-border-grow select:focus {
+    border-width: 4px !important;
+    border-color: var(--primary) !important;
+    outline: none !important;
+}
+
+/* Input Neon (Free) */
+.efx-input-neon input,
+.efx-input-neon textarea,
+.efx-input-neon select {
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 0 5px var(--primary) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-input-neon input:focus,
+.efx-input-neon textarea:focus,
+.efx-input-neon select:focus {
+    box-shadow: 0 0 15px var(--primary) !important;
+    outline: none !important;
+}
+
+/* Switch iOS (Free) */
+.efx-switch-ios input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 40px !important;
+    height: 20px !important;
+    background: #ccc !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important;
+}
+.efx-switch-ios input[type="checkbox"]:checked {
+    background: var(--primary) !important;
+}
+.efx-switch-ios input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease;
+}
+.efx-switch-ios input[type="checkbox"]:checked::before {
+    left: 21px;
+}
+
+/* Toggle Minimal (Free) */
+.efx-toggle-minimal input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 40px !important;
+    height: 20px !important;
+    background: #ddd !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    cursor: pointer !important;
+}
+.efx-toggle-minimal input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+}
+.efx-toggle-minimal input[type="checkbox"]:checked {
+    background: var(--primary) !important;
+}
+.efx-toggle-minimal input[type="checkbox"]:checked::before {
+    left: 22px;
+}
+
+/* Radio Escala (Free) */
+.efx-radio-scale input[type="radio"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+.efx-radio-scale input[type="radio"]:checked {
+    border-color: var(--primary) !important;
+    transform: scale(1.2) !important;
+}
+
+/* Checkbox Rotação (Free) */
+.efx-checkbox-rotate input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 3px !important;
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+.efx-checkbox-rotate input[type="checkbox"]:checked {
+    border-color: var(--primary) !important;
+    transform: rotate(45deg) scale(1.2) !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Input Cyberpunk (Premium) */
+.efx-input-cyber input,
+.efx-input-cyber textarea,
+.efx-input-cyber select {
+    border: 2px solid #0ff !important;
+    box-shadow: 0 0 10px #0ff, inset 0 0 5px #0ff !important;
+    background: rgba(0, 255, 255, 0.05) !important;
+    color: #0ff !important;
+}
+.efx-input-cyber input:focus,
+.efx-input-cyber textarea:focus,
+.efx-input-cyber select:focus {
+    box-shadow: 0 0 20px #0ff, inset 0 0 10px #0ff !important;
+    outline: none !important;
+}
+
+/* Input Vidro (Premium) */
+.efx-input-glass input,
+.efx-input-glass textarea,
+.efx-input-glass select {
+    background: rgba(255,255,255,0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: white !important;
+}
+.efx-input-glass input:focus,
+.efx-input-glass textarea:focus,
+.efx-input-glass select:focus {
+    background: rgba(255,255,255,0.2) !important;
+    border-color: rgba(255,255,255,0.5) !important;
+    outline: none !important;
+}
+
+/* Input Gradiente (Premium) */
+.efx-input-gradient input,
+.efx-input-gradient textarea,
+.efx-input-gradient select {
+    border: none !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+    transition: filter 0.3s ease !important;
+}
+.efx-input-gradient input:focus,
+.efx-input-gradient textarea:focus,
+.efx-input-gradient select:focus {
+    filter: brightness(1.2) !important;
+    outline: none !important;
+}
+
+/* Switch Neon (Premium) */
+.efx-switch-neon input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 40px !important;
+    height: 20px !important;
+    background: #333 !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    cursor: pointer !important;
+    box-shadow: 0 0 5px #0ff !important;
+}
+.efx-switch-neon input[type="checkbox"]:checked {
+    background: #0ff !important;
+    box-shadow: 0 0 15px #0ff !important;
+}
+.efx-switch-neon input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease;
+}
+.efx-switch-neon input[type="checkbox"]:checked::before {
+    left: 21px;
+    background: #333;
+}
+
+/* Toggle 3D (Premium) */
+.efx-toggle-3d input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 40px !important;
+    height: 20px !important;
+    background: #ddd !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), inset 0 2px 5px rgba(255,255,255,0.5) !important;
+}
+.efx-toggle-3d input[type="checkbox"]:checked {
+    background: var(--primary) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), inset 0 2px 5px rgba(0,0,0,0.2) !important;
+}
+.efx-toggle-3d input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: left 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.efx-toggle-3d input[type="checkbox"]:checked::before {
+    left: 21px;
+}
+
+/* Radio Glow (Premium) */
+.efx-radio-glow input[type="radio"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+.efx-radio-glow input[type="radio"]:checked {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 15px var(--primary) !important;
+}
+
+/* Checkbox Animado (Premium) */
+.efx-checkbox-anim input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+}
+.efx-checkbox-anim input[type="checkbox"]:checked {
+    border-color: var(--primary) !important;
+    background: var(--primary) !important;
+}
+.efx-checkbox-anim input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    animation: check-pop 0.3s ease;
+}
+@keyframes check-pop {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Slider Gradiente (Premium) */
+.efx-slider-gradient input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4) !important;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+}
+.efx-slider-gradient input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.efx-slider-gradient input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* ===== ANIMAÇÕES ===== */
+
+/* Fades */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.efx-fade-in { animation: fadeIn 1s ease forwards !important; }
+
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+.efx-fade-out { animation: fadeOut 1s ease forwards !important; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 40px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-up { animation: fadeInUp 1s ease forwards !important; }
+
+@keyframes fadeInDown { from { opacity: 0; transform: translate3d(0, -40px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-down { animation: fadeInDown 1s ease forwards !important; }
+
+@keyframes fadeInLeft { from { opacity: 0; transform: translate3d(-40px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-left { animation: fadeInLeft 1s ease forwards !important; }
+
+@keyframes fadeInRight { from { opacity: 0; transform: translate3d(40px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-right { animation: fadeInRight 1s ease forwards !important; }
+
+@keyframes fadeInUpBig { from { opacity: 0; transform: translate3d(0, 2000px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-up-big { animation: fadeInUpBig 1s ease forwards !important; }
+
+@keyframes fadeInDownBig { from { opacity: 0; transform: translate3d(0, -2000px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-down-big { animation: fadeInDownBig 1s ease forwards !important; }
+
+@keyframes fadeInLeftBig { from { opacity: 0; transform: translate3d(-2000px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-left-big { animation: fadeInLeftBig 1s ease forwards !important; }
+
+@keyframes fadeInRightBig { from { opacity: 0; transform: translate3d(2000px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+.efx-fade-in-right-big { animation: fadeInRightBig 1s ease forwards !important; }
+
+/* Zooms */
+@keyframes zoomIn { from { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 1; } }
+.efx-zoom-in { animation: zoomIn 1s ease forwards !important; }
+
+@keyframes zoomOut { from { opacity: 1; } to { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); } }
+.efx-zoom-out { animation: zoomOut 1s ease forwards !important; }
+
+@keyframes zoomInUp { from { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } to { opacity: 1; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+.efx-zoom-in-up { animation: zoomInUp 1s ease forwards !important; }
+
+@keyframes zoomInDown { from { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } to { opacity: 1; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+.efx-zoom-in-down { animation: zoomInDown 1s ease forwards !important; }
+
+@keyframes zoomInLeft { from { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } to { opacity: 1; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+.efx-zoom-in-left { animation: zoomInLeft 1s ease forwards !important; }
+
+@keyframes zoomInRight { from { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } to { opacity: 1; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); } }
+.efx-zoom-in-right { animation: zoomInRight 1s ease forwards !important; }
+
+@keyframes zoomOutUp { from { opacity: 1; } to { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } }
+.efx-zoom-out-up { animation: zoomOutUp 1s ease forwards !important; }
+
+@keyframes zoomOutDown { from { opacity: 1; } to { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } }
+.efx-zoom-out-down { animation: zoomOutDown 1s ease forwards !important; }
+
+@keyframes zoomOutLeft { from { opacity: 1; } to { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } }
+.efx-zoom-out-left { animation: zoomOutLeft 1s ease forwards !important; }
+
+@keyframes zoomOutRight { from { opacity: 1; } to { opacity: 0; transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0); animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); } }
+.efx-zoom-out-right { animation: zoomOutRight 1s ease forwards !important; }
+
+/* Slides */
+@keyframes slideInUp { from { transform: translate3d(0, 100%, 0); visibility: visible; } to { transform: translate3d(0, 0, 0); } }
+.efx-slide-in-up { animation: slideInUp 1s ease forwards !important; }
+
+@keyframes slideInDown { from { transform: translate3d(0, -100%, 0); visibility: visible; } to { transform: translate3d(0, 0, 0); } }
+.efx-slide-in-down { animation: slideInDown 1s ease forwards !important; }
+
+@keyframes slideInLeft { from { transform: translate3d(-100%, 0, 0); visibility: visible; } to { transform: translate3d(0, 0, 0); } }
+.efx-slide-in-left { animation: slideInLeft 1s ease forwards !important; }
+
+@keyframes slideInRight { from { transform: translate3d(100%, 0, 0); visibility: visible; } to { transform: translate3d(0, 0, 0); } }
+.efx-slide-in-right { animation: slideInRight 1s ease forwards !important; }
+
+@keyframes slideOutUp { from { transform: translate3d(0, 0, 0); } to { visibility: hidden; transform: translate3d(0, -100%, 0); } }
+.efx-slide-out-up { animation: slideOutUp 1s ease forwards !important; }
+
+@keyframes slideOutDown { from { transform: translate3d(0, 0, 0); } to { visibility: hidden; transform: translate3d(0, 100%, 0); } }
+.efx-slide-out-down { animation: slideOutDown 1s ease forwards !important; }
+
+@keyframes slideOutLeft { from { transform: translate3d(0, 0, 0); } to { visibility: hidden; transform: translate3d(-100%, 0, 0); } }
+.efx-slide-out-left { animation: slideOutLeft 1s ease forwards !important; }
+
+@keyframes slideOutRight { from { transform: translate3d(0, 0, 0); } to { visibility: hidden; transform: translate3d(100%, 0, 0); } }
+.efx-slide-out-right { animation: slideOutRight 1s ease forwards !important; }
+
+/* Flips */
+@keyframes flip { from { transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg); animation-timing-function: ease-out; } to { transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg); } }
+.efx-flip { animation: flip 1s ease forwards !important; backface-visibility: visible !important; }
+
+@keyframes flipInX { from { transform: perspective(400px) rotate3d(1, 0, 0, 90deg); animation-timing-function: ease-in; opacity: 0; } to { transform: perspective(400px); } }
+.efx-flip-in-x { animation: flipInX 1s ease forwards !important; backface-visibility: visible !important; }
+
+@keyframes flipInY { from { transform: perspective(400px) rotate3d(0, 1, 0, 90deg); animation-timing-function: ease-in; opacity: 0; } to { transform: perspective(400px); } }
+.efx-flip-in-y { animation: flipInY 1s ease forwards !important; backface-visibility: visible !important; }
+
+@keyframes flipOutX { from { transform: perspective(400px); } to { transform: perspective(400px) rotate3d(1, 0, 0, 90deg); opacity: 0; } }
+.efx-flip-out-x { animation: flipOutX 1s ease forwards !important; backface-visibility: visible !important; }
+
+@keyframes flipOutY { from { transform: perspective(400px); } to { transform: perspective(400px) rotate3d(0, 1, 0, 90deg); opacity: 0; } }
+.efx-flip-out-y { animation: flipOutY 1s ease forwards !important; backface-visibility: visible !important; }
+
+/* Rotates */
+@keyframes rotateIn { from { transform: rotate3d(0, 0, 1, -200deg); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+.efx-rotate-in { animation: rotateIn 1s ease forwards !important; transform-origin: center; }
+
+@keyframes rotateOut { from { opacity: 1; } to { transform: rotate3d(0, 0, 1, 200deg); opacity: 0; } }
+.efx-rotate-out { animation: rotateOut 1s ease forwards !important; transform-origin: center; }
+
+@keyframes rotateInDownLeft { from { transform: rotate3d(0, 0, 1, -45deg); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+.efx-rotate-in-down-left { animation: rotateInDownLeft 1s ease forwards !important; transform-origin: left bottom; }
+
+@keyframes rotateInDownRight { from { transform: rotate3d(0, 0, 1, 45deg); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+.efx-rotate-in-down-right { animation: rotateInDownRight 1s ease forwards !important; transform-origin: right bottom; }
+
+@keyframes rotateInUpLeft { from { transform: rotate3d(0, 0, 1, 45deg); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+.efx-rotate-in-up-left { animation: rotateInUpLeft 1s ease forwards !important; transform-origin: left bottom; }
+
+@keyframes rotateInUpRight { from { transform: rotate3d(0, 0, 1, -45deg); opacity: 0; } to { transform: translate3d(0, 0, 0); opacity: 1; } }
+.efx-rotate-in-up-right { animation: rotateInUpRight 1s ease forwards !important; transform-origin: right bottom; }
+
+@keyframes rotateOutDownLeft { from { opacity: 1; } to { transform: rotate3d(0, 0, 1, 45deg); opacity: 0; } }
+.efx-rotate-out-down-left { animation: rotateOutDownLeft 1s ease forwards !important; transform-origin: left bottom; }
+
+@keyframes rotateOutDownRight { from { opacity: 1; } to { transform: rotate3d(0, 0, 1, -45deg); opacity: 0; } }
+.efx-rotate-out-down-right { animation: rotateOutDownRight 1s ease forwards !important; transform-origin: right bottom; }
+
+@keyframes rotateOutUpLeft { from { opacity: 1; } to { transform: rotate3d(0, 0, 1, -45deg); opacity: 0; } }
+.efx-rotate-out-up-left { animation: rotateOutUpLeft 1s ease forwards !important; transform-origin: left bottom; }
+
+@keyframes rotateOutUpRight { from { opacity: 1; } to { transform: rotate3d(0, 0, 1, 45deg); opacity: 0; } }
+.efx-rotate-out-up-right { animation: rotateOutUpRight 1s ease forwards !important; transform-origin: right bottom; }
+
+/* Attention Seekers */
+@keyframes bounce { 0%, 20%, 53%, to { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); transform: translateZ(0); } 40%, 43% { animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0, -30px, 0) scaleY(1.1); } 70% { animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0, -15px, 0) scaleY(1.05); } 80% { transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); transform: translateZ(0) scaleY(0.95); } 90% { transform: translate3d(0, -4px, 0) scaleY(1.02); } }
+.efx-bounce { animation: bounce 1s ease infinite !important; transform-origin: center bottom; }
+
+@keyframes flash { 0%, 50%, to { opacity: 1; } 25%, 75% { opacity: 0; } }
+.efx-flash { animation: flash 1s ease infinite !important; }
+
+@keyframes pulse { 0% { transform: scaleX(1); } 50% { transform: scale3d(1.05, 1.05, 1.05); } to { transform: scaleX(1); } }
+.efx-pulse { animation: pulse 1s ease infinite !important; }
+
+@keyframes rubberBand { 0% { transform: scaleX(1); } 30% { transform: scale3d(1.25, 0.75, 1); } 40% { transform: scale3d(0.75, 1.25, 1); } 50% { transform: scale3d(1.15, 0.85, 1); } 65% { transform: scale3d(0.95, 1.05, 1); } 75% { transform: scale3d(1.05, 0.95, 1); } to { transform: scaleX(1); } }
+.efx-rubber-band { animation: rubberBand 1s ease infinite !important; }
+
+@keyframes shakeX { 0%, to { transform: translateZ(0); } 10%, 30%, 50%, 70%, 90% { transform: translate3d(-10px, 0, 0); } 20%, 40%, 60%, 80% { transform: translate3d(10px, 0, 0); } }
+.efx-shake-x { animation: shakeX 1s ease infinite !important; }
+
+@keyframes shakeY { 0%, to { transform: translateZ(0); } 10%, 30%, 50%, 70%, 90% { transform: translate3d(0, -10px, 0); } 20%, 40%, 60%, 80% { transform: translate3d(0, 10px, 0); } }
+.efx-shake-y { animation: shakeY 1s ease infinite !important; }
+
+@keyframes headShake { 0% { transform: translateX(0); } 6.5% { transform: translateX(-6px) rotateY(-9deg); } 18.5% { transform: translateX(5px) rotateY(7deg); } 31.5% { transform: translateX(-3px) rotateY(-5deg); } 43.5% { transform: translateX(2px) rotateY(3deg); } 50% { transform: translateX(0); } }
+.efx-head-shake { animation: headShake 1s ease infinite !important; }
+
+@keyframes swing { 20% { transform: rotate3d(0, 0, 1, 15deg); } 40% { transform: rotate3d(0, 0, 1, -10deg); } 60% { transform: rotate3d(0, 0, 1, 5deg); } 80% { transform: rotate3d(0, 0, 1, -5deg); } to { transform: rotate3d(0, 0, 1, 0deg); } }
+.efx-swing { animation: swing 1s ease infinite !important; transform-origin: top center; }
+
+@keyframes tada { 0% { transform: scaleX(1); } 10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); } 30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); } 40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); } to { transform: scaleX(1); } }
+.efx-tada { animation: tada 1s ease infinite !important; }
+
+@keyframes wobble { 0% { transform: translateZ(0); } 15% { transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg); } 30% { transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg); } 45% { transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg); } 60% { transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg); } 75% { transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg); } to { transform: translateZ(0); } }
+.efx-wobble { animation: wobble 1s ease infinite !important; }
+
+@keyframes jello { 0%, 11.1%, to { transform: translateZ(0); } 22.2% { transform: skewX(-12.5deg) skewY(-12.5deg); } 33.3% { transform: skewX(6.25deg) skewY(6.25deg); } 44.4% { transform: skewX(-3.125deg) skewY(-3.125deg); } 55.5% { transform: skewX(1.5625deg) skewY(1.5625deg); } 66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg); } 77.7% { transform: skewX(0.390625deg) skewY(0.390625deg); } 88.8% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg); } }
+.efx-jello { animation: jello 1s ease infinite !important; transform-origin: center; }
+
+@keyframes heartBeat { 0% { transform: scale(1); } 14% { transform: scale(1.3); } 28% { transform: scale(1); } 42% { transform: scale(1.3); } 70% { transform: scale(1); } }
+.efx-heart-beat { animation: heartBeat 1.3s ease infinite !important; }
+
+/* Light Speed */
+@keyframes lightSpeedIn { from { transform: translate3d(100%, 0, 0) skewX(-30deg); opacity: 0; } to { transform: translateZ(0) skewX(0); opacity: 1; } }
+.efx-light-speed-in { animation: lightSpeedIn 1s ease forwards !important; }
+
+@keyframes lightSpeedOut { from { opacity: 1; } to { transform: translate3d(100%, 0, 0) skewX(30deg); opacity: 0; } }
+.efx-light-speed-out { animation: lightSpeedOut 1s ease forwards !important; }
+
+/* Roll */
+@keyframes rollIn { from { opacity: 0; transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg); } to { opacity: 1; transform: translateZ(0); } }
+.efx-roll-in { animation: rollIn 1s ease forwards !important; }
+
+@keyframes rollOut { from { opacity: 1; } to { opacity: 0; transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg); } }
+.efx-roll-out { animation: rollOut 1s ease forwards !important; }
+
+/* ===== EFEITOS 3D ===== */
+
+/* Tilt 3D (Free) */
+.efx-3d-tilt {
+    transition: transform 0.3s ease !important;
+    transform-style: preserve-3d !important;
+    perspective: 800px !important;
+}
+.efx-3d-tilt:hover {
+    transform: rotateX(10deg) rotateY(10deg) !important;
+}
+
+/* Tilt Avançado (Premium) */
+.efx-3d-tilt-advanced {
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+    transform-style: preserve-3d !important;
+    perspective: 1200px !important;
+    will-change: transform;
+}
+.efx-3d-tilt-advanced:hover {
+    transform: rotateX(15deg) rotateY(15deg) scale(1.05) !important;
+    box-shadow: -20px 20px 30px rgba(0,0,0,0.2) !important;
+}
+
+/* Perspectiva (Free) */
+.efx-3d-perspective {
+    transform: perspective(800px) rotateX(0deg) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-perspective:hover {
+    transform: perspective(800px) rotateX(5deg) !important;
+}
+
+.efx-3d-perspective-left {
+    transform: perspective(800px) rotateY(0deg) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-perspective-left:hover {
+    transform: perspective(800px) rotateY(5deg) !important;
+}
+
+.efx-3d-perspective-right {
+    transform: perspective(800px) rotateY(0deg) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-perspective-right:hover {
+    transform: perspective(800px) rotateY(-5deg) !important;
+}
+
+.efx-3d-perspective-up {
+    transform: perspective(800px) rotateX(0deg) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-perspective-up:hover {
+    transform: perspective(800px) rotateX(-5deg) !important;
+}
+
+.efx-3d-perspective-down {
+    transform: perspective(800px) rotateX(0deg) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-perspective-down:hover {
+    transform: perspective(800px) rotateX(5deg) !important;
+}
+
+/* Rotações (Free) */
+.efx-3d-rotate-x {
+    animation: rotateX 2s infinite linear !important;
+}
+@keyframes rotateX {
+    from { transform: rotateX(0deg); }
+    to { transform: rotateX(360deg); }
+}
+
+.efx-3d-rotate-y {
+    animation: rotateY 2s infinite linear !important;
+}
+@keyframes rotateY {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.efx-3d-rotate-z {
+    animation: rotateZ 2s infinite linear !important;
+}
+@keyframes rotateZ {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg); }
+}
+
+.efx-3d-rotate-x-180 {
+    transition: transform 0.5s ease !important;
+}
+.efx-3d-rotate-x-180:hover {
+    transform: rotateX(180deg) !important;
+}
+
+.efx-3d-rotate-y-180 {
+    transition: transform 0.5s ease !important;
+}
+.efx-3d-rotate-y-180:hover {
+    transform: rotateY(180deg) !important;
+}
+
+/* Flips (Free) */
+.efx-3d-flip-x {
+    animation: flipX 2s infinite !important;
+}
+@keyframes flipX {
+    0% { transform: perspective(400px) rotateX(0deg); }
+    50% { transform: perspective(400px) rotateX(180deg); }
+    100% { transform: perspective(400px) rotateX(360deg); }
+}
+
+.efx-3d-flip-y {
+    animation: flipY 2s infinite !important;
+}
+@keyframes flipY {
+    0% { transform: perspective(400px) rotateY(0deg); }
+    50% { transform: perspective(400px) rotateY(180deg); }
+    100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+.efx-3d-flip-x-3d {
+    transition: transform 0.6s !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-flip-x-3d:hover {
+    transform: rotateX(180deg) !important;
+}
+
+.efx-3d-flip-y-3d {
+    transition: transform 0.6s !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-flip-y-3d:hover {
+    transform: rotateY(180deg) !important;
+}
+
+/* Card 3D (Premium) */
+.efx-3d-card {
+    transform-style: preserve-3d !important;
+    perspective: 1000px !important;
+}
+.efx-3d-card > * {
+    transition: transform 0.3s ease !important;
+    transform: translateZ(20px);
+}
+
+.efx-3d-card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+.efx-3d-card-lift:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) !important;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3) !important;
+}
+
+.efx-3d-card-rotate {
+    transition: transform 0.5s ease !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-card-rotate:hover {
+    transform: rotateY(180deg) !important;
+}
+
+.efx-3d-card-tilt {
+    transition: transform 0.4s ease !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-card-tilt:hover {
+    transform: rotateX(10deg) rotateY(-10deg) !important;
+}
+
+.efx-3d-card-perspective {
+    transform: perspective(800px) translateZ(0) !important;
+    transition: transform 0.3s ease !important;
+}
+.efx-3d-card-perspective:hover {
+    transform: perspective(800px) translateZ(50px) !important;
+}
+
+.efx-3d-card-outline {
+    border: 2px solid transparent !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-card-outline::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid currentColor;
+    transform: translateZ(-10px);
+    opacity: 0.5;
+}
+
+/* Profundidade (Free) */
+.efx-3d-depth {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.1) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-3d-depth:hover {
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3), 0 0 0 2px rgba(0,0,0,0.2) !important;
+}
+
+.efx-3d-depth-strong {
+    box-shadow: 0 30px 40px rgba(0,0,0,0.3), 0 0 0 2px rgba(0,0,0,0.2) !important;
+}
+
+/* Camadas (Premium) */
+.efx-3d-layered {
+    position: relative;
+    transform-style: preserve-3d;
+}
+.efx-3d-layered::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: -5px;
+    bottom: -5px;
+    background: rgba(0,0,0,0.1);
+    transform: translateZ(-5px);
+}
+.efx-3d-layered::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    background: rgba(0,0,0,0.05);
+    transform: translateZ(-10px);
+}
+
+/* Parallax (Premium) */
+.efx-3d-parallax {
+    transition: transform 0.3s ease !important;
+    transform-style: preserve-3d !important;
+}
+.efx-3d-parallax:hover {
+    transform: translateZ(30px) !important;
+}
+.efx-3d-parallax-deep:hover {
+    transform: translateZ(60px) !important;
+}
+
+/* Isométrico (Premium) */
+.efx-3d-isometric {
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg) !important;
+    transition: transform 0.3s !important;
+}
+.efx-3d-isometric:hover {
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg) translateZ(20px) !important;
+}
+
+.efx-3d-isometric-left {
+    transform: rotateX(60deg) rotateY(15deg) rotateZ(-45deg) !important;
+}
+
+.efx-3d-isometric-right {
+    transform: rotateX(60deg) rotateY(-15deg) rotateZ(-45deg) !important;
+}
+
+.efx-3d-isometric-top {
+    transform: rotateX(45deg) rotateY(0) rotateZ(-30deg) !important;
+}
+
+/* Combinações (Premium) */
+.efx-3d-rotate-scale {
+    animation: rotateScale 3s infinite ease-in-out !important;
+}
+@keyframes rotateScale {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+.efx-3d-skew {
+    animation: skew3d 3s infinite alternate !important;
+}
+@keyframes skew3d {
+    0% { transform: skewX(0deg) skewY(0deg); }
+    100% { transform: skewX(10deg) skewY(5deg); }
+}
+
+.efx-3d-skew-rotate {
+    animation: skewRotate 4s infinite alternate !important;
+}
+@keyframes skewRotate {
+    0% { transform: skewX(0deg) rotate(0deg); }
+    100% { transform: skewX(10deg) rotate(20deg); }
+}
+
+.efx-3d-morph {
+    animation: morph3d 5s infinite ease-in-out !important;
+}
+@keyframes morph3d {
+    0% { transform: scale(1) rotateX(0deg); }
+    33% { transform: scale(1.1) rotateX(30deg); }
+    66% { transform: scale(0.9) rotateX(-30deg); }
+    100% { transform: scale(1) rotateX(0deg); }
+}
+
+.efx-3d-float {
+    animation: float3d 4s infinite ease-in-out !important;
+}
+@keyframes float3d {
+    0% { transform: translateZ(0px) rotateX(0deg); }
+    50% { transform: translateZ(30px) rotateX(5deg); }
+    100% { transform: translateZ(0px) rotateX(0deg); }
+}
+
+.efx-3d-pulse-3d {
+    animation: pulse3d 2s infinite ease-in-out !important;
+}
+@keyframes pulse3d {
+    0% { transform: scale(1) translateZ(0); }
+    50% { transform: scale(1.1) translateZ(20px); }
+    100% { transform: scale(1) translateZ(0); }
+}
+
+/* ===== EFEITOS DE FILTRO ===== */
+
+/* Blur Suave (Free) */
+.efx-filter-blur {
+    filter: blur(2px) !important;
+    transition: filter 0.3s ease !important;
+}
+.efx-filter-blur:hover {
+    filter: blur(0) !important;
+}
+
+/* Blur Forte (Free) */
+.efx-filter-blur-strong {
+    filter: blur(5px) !important;
+}
+
+/* Preto e Branco (Free) */
+.efx-filter-grayscale {
+    filter: grayscale(1) !important;
+}
+
+/* Meio Tom (Free) */
+.efx-filter-grayscale-half {
+    filter: grayscale(0.5) !important;
+}
+
+/* Sépia (Free) */
+.efx-filter-sepia {
+    filter: sepia(1) !important;
+}
+
+/* Sépia Suave (Free) */
+.efx-filter-sepia-light {
+    filter: sepia(0.3) !important;
+}
+
+/* Inverter Cores (Free) */
+.efx-filter-invert {
+    filter: invert(1) !important;
+}
+
+/* Inverter Meio (Free) */
+.efx-filter-invert-half {
+    filter: invert(0.5) !important;
+}
+
+/* Brilho + (Free) */
+.efx-filter-brightness {
+    filter: brightness(1.5) !important;
+}
+
+/* Brilho - (Free) */
+.efx-filter-brightness-low {
+    filter: brightness(0.7) !important;
+}
+
+/* Contraste Alto (Free) */
+.efx-filter-contrast {
+    filter: contrast(1.5) !important;
+}
+
+/* Baixo Contraste (Free) */
+.efx-filter-contrast-low {
+    filter: contrast(0.7) !important;
+}
+
+/* Saturação Alta (Free) */
+.efx-filter-saturate {
+    filter: saturate(2) !important;
+}
+
+/* Saturação Baixa (Free) */
+.efx-filter-saturate-low {
+    filter: saturate(0.5) !important;
+}
+
+/* Rotação de Matiz (Free) */
+.efx-filter-hue-rotate {
+    filter: hue-rotate(90deg) !important;
+}
+
+/* Matiz 180° (Free) */
+.efx-filter-hue-rotate-180 {
+    filter: hue-rotate(180deg) !important;
+}
+
+/* Sombra Projetada (Free) */
+.efx-filter-drop-shadow {
+    filter: drop-shadow(2px 4px 6px black) !important;
+}
+
+/* Sombra Pesada (Free) */
+.efx-filter-drop-shadow-heavy {
+    filter: drop-shadow(4px 8px 12px black) !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Vintage (Premium) */
+.efx-filter-vintage {
+    filter: sepia(0.5) contrast(1.2) brightness(0.9) !important;
+}
+
+/* Tom Frio (Premium) */
+.efx-filter-cool {
+    filter: hue-rotate(-20deg) saturate(1.2) brightness(1.1) !important;
+}
+
+/* Tom Quente (Premium) */
+.efx-filter-warm {
+    filter: hue-rotate(20deg) saturate(1.3) brightness(1.1) !important;
+}
+
+/* Sonhador (Premium) */
+.efx-filter-dreamy {
+    filter: blur(1px) brightness(1.1) contrast(0.9) saturate(1.2) !important;
+}
+
+/* Noir (Premium) */
+.efx-filter-noire {
+    filter: grayscale(1) contrast(1.5) brightness(0.8) !important;
+}
+
+/* Retro (Premium) */
+.efx-filter-retro {
+    filter: sepia(0.4) contrast(1.1) brightness(0.9) !important;
+}
+
+/* Fade (Premium) */
+.efx-filter-fade {
+    filter: opacity(0.7) brightness(1.1) !important;
+}
+
+/* Teal & Orange (Premium) */
+.efx-filter-teal-orange {
+    filter: hue-rotate(180deg) saturate(1.5) brightness(1.1) !important;
+}
+
+/* Tons Roxos (Premium) */
+.efx-filter-purple {
+    filter: hue-rotate(240deg) saturate(1.3) !important;
+}
+
+/* Tons Verdes (Premium) */
+.efx-filter-green {
+    filter: hue-rotate(90deg) saturate(1.3) !important;
+}
+
+/* Tons Azuis (Premium) */
+.efx-filter-blue {
+    filter: hue-rotate(200deg) saturate(1.3) !important;
+}
+
+/* Tons Vermelhos (Premium) */
+.efx-filter-red {
+    filter: hue-rotate(0deg) saturate(1.5) !important;
+}
+
+/* Tons Amarelos (Premium) */
+.efx-filter-yellow {
+    filter: hue-rotate(45deg) saturate(1.5) !important;
+}
+
+/* Cyberpunk (Premium) */
+.efx-filter-cyber {
+    filter: hue-rotate(300deg) saturate(2) contrast(1.2) !important;
+}
+
+/* Glitch (Premium) */
+.efx-filter-glitch {
+    filter: drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 blue) !important;
+    animation: glitch-filter 0.3s infinite !important;
+}
+@keyframes glitch-filter {
+    0% { filter: drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 blue); }
+    20% { filter: drop-shadow(-2px 0 0 red) drop-shadow(2px 0 0 blue); }
+    40% { filter: drop-shadow(2px 0 0 blue) drop-shadow(-2px 0 0 red); }
+    60% { filter: drop-shadow(-2px 0 0 blue) drop-shadow(2px 0 0 red); }
+    80% { filter: drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 blue); }
+    100% { filter: drop-shadow(2px 0 0 red) drop-shadow(-2px 0 0 blue); }
+}
+
+/* Duotone (Premium) */
+.efx-filter-duotone {
+    filter: grayscale(1) contrast(1.2) brightness(1.1) !important;
+    background-blend-mode: multiply !important;
+}
+
+/* Tritone (Premium) */
+.efx-filter-tritone {
+    filter: grayscale(1) contrast(1.3) brightness(0.9) !important;
+    background-blend-mode: screen !important;
+}
+
+/* Grão (Premium) */
+.efx-filter-grain {
+    position: relative;
+}
+.efx-filter-grain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.05);
+    opacity: 0.4;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+/* Pixelado (Premium) */
+.efx-filter-pixelate {
+    image-rendering: pixelated !important;
+    filter: contrast(1.2) !important;
+}
+
+/* Mosaico (Premium) */
+.efx-filter-mosaic {
+    filter: blur(2px) contrast(1.5) !important;
+}
+
+/* Pintura a Óleo (Premium) */
+.efx-filter-oil {
+    filter: contrast(1.3) saturate(1.2) brightness(0.9) !important;
+    mix-blend-mode: multiply !important;
+}
+
+/* Aquarela (Premium) */
+.efx-filter-watercolor {
+    filter: blur(1px) saturate(1.1) brightness(1.05) !important;
+    opacity: 0.95 !important;
+}
+
+/* Lápis (Premium) */
+.efx-filter-pencil {
+    filter: grayscale(1) contrast(1.5) brightness(0.9) !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+/* Carvão (Premium) */
+.efx-filter-charcoal {
+    filter: grayscale(1) contrast(2) brightness(0.7) !important;
+}
+
+/* HQ (Premium) */
+.efx-filter-comic {
+    filter: contrast(1.2) saturate(1.3) !important;
+    border: 2px solid black !important;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3) !important;
+}
+
+/* Neon (Premium) */
+.efx-filter-neon {
+    filter: brightness(1.5) saturate(2) !important;
+    text-shadow: 0 0 5px cyan, 0 0 10px cyan !important;
+}
+
+/* Pôr do Sol (Premium) */
+.efx-filter-sunset {
+    filter: hue-rotate(-10deg) saturate(1.3) brightness(1.2) !important;
+}
+
+/* Luar (Premium) */
+.efx-filter-moonlight {
+    filter: grayscale(0.3) brightness(0.9) contrast(1.1) !important;
+}
+
+/* Frio Extremo (Premium) */
+.efx-filter-cold {
+    filter: hue-rotate(200deg) saturate(1.5) brightness(0.8) !important;
+}
+
+/* Quente Extremo (Premium) */
+.efx-filter-hot {
+    filter: hue-rotate(20deg) saturate(2) brightness(1.3) !important;
+}
+
+/* ===== EFEITOS GLASSMORPHISM ===== */
+
+/* Vidro Claro (Free) */
+.efx-glass-light {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Vidro Escuro (Free) */
+.efx-glass-dark {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+    color: white !important;
+}
+
+/* Vidro Congelado (Free) */
+.efx-glass-frost {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Vidro Congelado Forte (Free) */
+.efx-glass-frost-strong {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(25px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Vidro Oceano (Free) */
+.efx-glass-ocean {
+    background: rgba(0, 150, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0, 150, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(0, 150, 255, 0.2) !important;
+}
+
+/* Vidro Rubi (Free) */
+.efx-glass-ruby {
+    background: rgba(225, 29, 72, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(225, 29, 72, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(225, 29, 72, 0.2) !important;
+}
+
+/* Vidro Esmeralda (Free) */
+.efx-glass-emerald {
+    background: rgba(16, 185, 129, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Vidro Ametista (Free) */
+.efx-glass-amethyst {
+    background: rgba(139, 92, 246, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Vidro Dourado (Free) */
+.efx-glass-gold {
+    background: rgba(234, 179, 8, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(234, 179, 8, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(234, 179, 8, 0.2) !important;
+}
+
+/* Vidro Prateado (Free) */
+.efx-glass-silver {
+    background: rgba(148, 163, 184, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Vidro Gelo (Free) */
+.efx-glass-ice {
+    background: rgba(200, 230, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Vidro Fumaça (Free) */
+.efx-glass-smoke {
+    background: rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Vidro Névoa (Free) */
+.efx-glass-mist {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: none !important;
+}
+
+/* Vidro Cristal (Free) */
+.efx-glass-crystal {
+    background: rgba(255, 255, 255, 0.01) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Vidro Diamante (Free) */
+.efx-glass-diamond {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Vidro Arco-Íris (Premium) */
+.efx-glass-rainbow {
+    background: linear-gradient(135deg, rgba(255,0,0,0.2), rgba(255,255,0,0.2), rgba(0,255,0,0.2), rgba(0,255,255,0.2), rgba(0,0,255,0.2), rgba(255,0,255,0.2)) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+/* Vidro Neon (Premium) */
+.efx-glass-neon {
+    background: rgba(0, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid #0ff !important;
+    box-shadow: 0 0 20px #0ff !important;
+}
+
+/* Vidro Cyberpunk (Premium) */
+.efx-glass-cyber {
+    background: rgba(255, 0, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid #f0f !important;
+    box-shadow: 0 0 20px #f0f, 0 0 40px #0ff !important;
+}
+
+/* Vidro Holográfico (Premium) */
+.efx-glass-hologram {
+    background: linear-gradient(135deg, rgba(255,0,0,0.1), rgba(255,255,0,0.1), rgba(0,255,0,0.1), rgba(0,255,255,0.1), rgba(0,0,255,0.1), rgba(255,0,255,0.1)) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+    animation: hologram-shift 5s infinite alternate !important;
+}
+@keyframes hologram-shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Vidro Aurora (Premium) */
+.efx-glass-aurora {
+    background: linear-gradient(125deg, rgba(27,59,79,0.3), rgba(42,92,110,0.3), rgba(59,123,138,0.3), rgba(76,154,159,0.3), rgba(107,184,176,0.3)) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    animation: aurora-shift 10s ease infinite !important;
+}
+@keyframes aurora-shift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Vidro Galáxia (Premium) */
+.efx-glass-galaxy {
+    background: radial-gradient(circle at 30% 30%, rgba(128,0,128,0.3), rgba(0,0,0,0.5)) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    position: relative;
+}
+.efx-glass-galaxy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 70%, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+/* Vidro Espaço (Premium) */
+.efx-glass-space {
+    background: rgba(0,0,0,0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    position: relative;
+}
+.efx-glass-space::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #ffd700, transparent),
+                radial-gradient(2px 2px at 80px 120px, #fff, transparent);
+    background-size: 200px 200px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Vidro Fogo (Premium) */
+.efx-glass-fire {
+    background: linear-gradient(135deg, rgba(255,69,0,0.3), rgba(255,140,0,0.3)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,140,0,0.5) !important;
+    box-shadow: 0 0 20px rgba(255,69,0,0.5) !important;
+}
+
+/* Vidro Água (Premium) */
+.efx-glass-water {
+    background: linear-gradient(135deg, rgba(0,191,255,0.2), rgba(72,209,204,0.2)) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(0,191,255,0.4) !important;
+    box-shadow: 0 0 20px rgba(0,191,255,0.3) !important;
+}
+
+/* Vidro Floresta (Premium) */
+.efx-glass-forest {
+    background: linear-gradient(135deg, rgba(34,139,34,0.2), rgba(107,142,35,0.2)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(34,139,34,0.3) !important;
+}
+
+/* Vidro Pôr do Sol (Premium) */
+.efx-glass-sunset {
+    background: linear-gradient(135deg, rgba(255,69,0,0.2), rgba(255,215,0,0.2)) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,215,0,0.4) !important;
+    box-shadow: 0 0 30px rgba(255,140,0,0.3) !important;
+}
+
+/* Vidro Luar (Premium) */
+.efx-glass-moonlight {
+    background: rgba(200,200,255,0.1) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Vidro Crepúsculo (Premium) */
+.efx-glass-twilight {
+    background: linear-gradient(135deg, rgba(75,0,130,0.2), rgba(138,43,226,0.2)) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(138,43,226,0.3) !important;
+    box-shadow: 0 8px 32px rgba(138,43,226,0.2) !important;
+}
+
+/* Vidro Amanhecer (Premium) */
+.efx-glass-dawn {
+    background: linear-gradient(135deg, rgba(255,182,193,0.2), rgba(255,160,122,0.2)) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,160,122,0.3) !important;
+}
+
+/* Vidro Doce (Premium) */
+.efx-glass-candy {
+    background: linear-gradient(135deg, rgba(255,105,180,0.2), rgba(255,20,147,0.2)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,20,147,0.3) !important;
+}
+
+/* Vidro Menta (Premium) */
+.efx-glass-mint {
+    background: rgba(152,251,152,0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(152,251,152,0.4) !important;
+}
+
+/* Vidro Lavanda (Premium) */
+.efx-glass-lavender {
+    background: rgba(230,230,250,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(230,230,250,0.5) !important;
+}
+
+/* Vidro Rosa (Premium) */
+.efx-glass-rose {
+    background: rgba(255,192,203,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,192,203,0.4) !important;
+}
+
+/* Vidro Pêssego (Premium) */
+.efx-glass-peach {
+    background: rgba(255,218,185,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,218,185,0.4) !important;
+}
+
+/* Vidro Coral (Premium) */
+.efx-glass-coral {
+    background: rgba(255,127,80,0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,127,80,0.4) !important;
+}
+
+/* Vidro Turquesa (Premium) */
+.efx-glass-turquoise {
+    background: rgba(64,224,208,0.2) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(64,224,208,0.4) !important;
+}
+
+/* Vidro Safira (Premium) */
+.efx-glass-sapphire {
+    background: rgba(0,0,255,0.15) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(0,0,255,0.3) !important;
+    box-shadow: 0 8px 32px rgba(0,0,255,0.2) !important;
+}
+
+/* Vidro Topázio (Premium) */
+.efx-glass-topaz {
+    background: rgba(255,215,0,0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,215,0,0.4) !important;
+}
+
+/* Vidro Obsidiana (Premium) */
+.efx-glass-obsidian {
+    background: rgba(0,0,0,0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+}
+
+/* Vidro Ônix (Premium) */
+.efx-glass-onyx {
+    background: rgba(10,10,10,0.7) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border: 1px solid rgba(255,255,255,0.05) !important;
+    color: white !important;
+}
+
+/* Vidro Pérola (Premium) */
+.efx-glass-pearl {
+    background: rgba(255,255,255,0.3) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05) !important;
+}
+
+/* Vidro Opala (Premium) */
+.efx-glass-opal {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(200,200,255,0.2)) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+    animation: opal-shift 6s infinite alternate !important;
+}
+@keyframes opal-shift {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+/* ===== EFEITOS DE HOVER ===== */
+
+/* Escala + (Free) */
+.efx-hover-scale-up {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-scale-up:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Escala - (Free) */
+.efx-hover-scale-down {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-scale-down:hover {
+    transform: scale(0.95) !important;
+}
+
+/* Escala Grande + (Free) */
+.efx-hover-scale-up-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-scale-up-big:hover {
+    transform: scale(1.2) !important;
+}
+
+/* Escala Grande - (Free) */
+.efx-hover-scale-down-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-scale-down-big:hover {
+    transform: scale(0.8) !important;
+}
+
+/* Mover para Cima (Free) */
+.efx-hover-up {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-up:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* Mover para Baixo (Free) */
+.efx-hover-down {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-down:hover {
+    transform: translateY(5px) !important;
+}
+
+/* Mover para Esquerda (Free) */
+.efx-hover-left {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-left:hover {
+    transform: translateX(-5px) !important;
+}
+
+/* Mover para Direita (Free) */
+.efx-hover-right {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-right:hover {
+    transform: translateX(5px) !important;
+}
+
+/* Mover para Cima (Grande) (Free) */
+.efx-hover-up-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-up-big:hover {
+    transform: translateY(-15px) !important;
+}
+
+/* Mover para Baixo (Grande) (Free) */
+.efx-hover-down-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-down-big:hover {
+    transform: translateY(15px) !important;
+}
+
+/* Mover para Esquerda (Grande) (Free) */
+.efx-hover-left-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-left-big:hover {
+    transform: translateX(-15px) !important;
+}
+
+/* Mover para Direita (Grande) (Free) */
+.efx-hover-right-big {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-right-big:hover {
+    transform: translateX(15px) !important;
+}
+
+/* Sombra (Free) */
+.efx-hover-shadow {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Sombra Grande (Free) */
+.efx-hover-shadow-big {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-shadow-big:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
+}
+
+/* Brilho (Free) */
+.efx-hover-glow {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255,255,255,0.8) !important;
+}
+
+/* Brilho Azul (Free) */
+.efx-hover-glow-blue {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-glow-blue:hover {
+    box-shadow: 0 0 20px rgba(33,150,243,0.8) !important;
+}
+
+/* Brilho Verde (Free) */
+.efx-hover-glow-green {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-glow-green:hover {
+    box-shadow: 0 0 20px rgba(76,175,80,0.8) !important;
+}
+
+/* Brilho Vermelho (Free) */
+.efx-hover-glow-red {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-glow-red:hover {
+    box-shadow: 0 0 20px rgba(244,67,54,0.8) !important;
+}
+
+/* Brilho Roxo (Free) */
+.efx-hover-glow-purple {
+    transition: box-shadow 0.3s ease !important;
+}
+.efx-hover-glow-purple:hover {
+    box-shadow: 0 0 20px rgba(156,39,176,0.8) !important;
+}
+
+/* Borda (Free) */
+.efx-hover-border {
+    transition: border-color 0.3s ease !important;
+    border: 2px solid transparent !important;
+}
+.efx-hover-border:hover {
+    border-color: currentColor !important;
+}
+
+/* Borda Espessa (Free) */
+.efx-hover-border-thick {
+    transition: border-width 0.3s ease !important;
+    border: 2px solid transparent !important;
+}
+.efx-hover-border-thick:hover {
+    border-width: 4px !important;
+    border-color: currentColor !important;
+}
+
+/* Borda Tracejada (Free) */
+.efx-hover-border-dashed {
+    transition: border-color 0.3s ease !important;
+    border: 2px dashed transparent !important;
+}
+.efx-hover-border-dashed:hover {
+    border-color: currentColor !important;
+}
+
+/* Borda Pontilhada (Free) */
+.efx-hover-border-dotted {
+    transition: border-color 0.3s ease !important;
+    border: 2px dotted transparent !important;
+}
+.efx-hover-border-dotted:hover {
+    border-color: currentColor !important;
+}
+
+/* Borda Dupla (Free) */
+.efx-hover-border-double {
+    transition: border-color 0.3s ease !important;
+    border: 4px double transparent !important;
+}
+.efx-hover-border-double:hover {
+    border-color: currentColor !important;
+}
+
+/* Fundo Escurece (Free) */
+.efx-hover-bg-darken {
+    transition: background-color 0.3s ease, filter 0.3s ease !important;
+}
+.efx-hover-bg-darken:hover {
+    filter: brightness(0.8) !important;
+}
+
+/* Fundo Clareia (Free) */
+.efx-hover-bg-lighten {
+    transition: background-color 0.3s ease, filter 0.3s ease !important;
+}
+.efx-hover-bg-lighten:hover {
+    filter: brightness(1.2) !important;
+}
+
+/* Muda Cor (Free) */
+.efx-hover-bg-color {
+    transition: background-color 0.3s ease !important;
+}
+.efx-hover-bg-color:hover {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+/* ===== PREMIUM ===== */
+
+/* Gradiente (Premium) */
+.efx-hover-bg-gradient {
+    transition: background 0.3s ease !important;
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+}
+.efx-hover-bg-gradient:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea) !important;
+}
+
+/* Brilho no Fundo (Premium) */
+.efx-hover-bg-shine {
+    position: relative;
+    overflow: hidden;
+}
+.efx-hover-bg-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+.efx-hover-bg-shine:hover::before {
+    left: 100%;
+}
+
+/* Rotação (Free) */
+.efx-hover-rotate {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-rotate:hover {
+    transform: rotate(10deg) !important;
+}
+
+/* Rotação Esquerda (Free) */
+.efx-hover-rotate-left {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-rotate-left:hover {
+    transform: rotate(-10deg) !important;
+}
+
+/* Rotação Direita (Free) */
+.efx-hover-rotate-right {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-rotate-right:hover {
+    transform: rotate(10deg) !important;
+}
+
+/* Rotação 180° (Free) */
+.efx-hover-rotate-180 {
+    transition: transform 0.5s ease !important;
+}
+.efx-hover-rotate-180:hover {
+    transform: rotate(180deg) !important;
+}
+
+/* Levantar (Premium) */
+.efx-hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.efx-hover-lift:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+}
+
+/* Flutuar (Premium) */
+.efx-hover-float {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-float:hover {
+    transform: translateY(-3px) !important;
+}
+
+/* Pulso (Premium) */
+.efx-hover-pulse:hover {
+    animation: pulse-hover 0.5s ease infinite !important;
+}
+@keyframes pulse-hover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Quicar (Premium) */
+.efx-hover-bounce:hover {
+    animation: bounce-hover 0.5s ease !important;
+}
+@keyframes bounce-hover {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* Balançar (Premium) */
+.efx-hover-wobble:hover {
+    animation: wobble-hover 0.5s ease !important;
+}
+@keyframes wobble-hover {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-5px) rotate(-3deg); }
+    30% { transform: translateX(4px) rotate(2deg); }
+    45% { transform: translateX(-3px) rotate(-1deg); }
+    60% { transform: translateX(2px) rotate(1deg); }
+    75% { transform: translateX(-1px) rotate(0); }
+    100% { transform: translateX(0); }
+}
+
+/* Inclinar (Premium) */
+.efx-hover-skew {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-skew:hover {
+    transform: skewX(5deg) !important;
+}
+
+/* Inclinar Esquerda (Premium) */
+.efx-hover-skew-left {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-skew-left:hover {
+    transform: skewX(-5deg) !important;
+}
+
+/* Inclinar Direita (Premium) */
+.efx-hover-skew-right {
+    transition: transform 0.3s ease !important;
+}
+.efx-hover-skew-right:hover {
+    transform: skewX(5deg) !important;
+}
+
+/* Flip Horizontal (Premium) */
+.efx-hover-flip-x {
+    transition: transform 0.5s ease !important;
+    transform-style: preserve-3d;
+}
+.efx-hover-flip-x:hover {
+    transform: rotateX(180deg) !important;
+}
+
+/* Flip Vertical (Premium) */
+.efx-hover-flip-y {
+    transition: transform 0.5s ease !important;
+    transform-style: preserve-3d;
+}
+.efx-hover-flip-y:hover {
+    transform: rotateY(180deg) !important;
+}
+
+/* Chacoalhar (Premium) */
+.efx-hover-shake:hover {
+    animation: shake-hover 0.5s ease !important;
+}
+@keyframes shake-hover {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Gelatina (Premium) */
+.efx-hover-jello:hover {
+    animation: jello-hover 0.5s ease !important;
+}
+@keyframes jello-hover {
+    0% { transform: scale3d(1, 1, 1); }
+    30% { transform: scale3d(1.25, 0.75, 1); }
+    40% { transform: scale3d(0.75, 1.25, 1); }
+    50% { transform: scale3d(1.15, 0.85, 1); }
+    65% { transform: scale3d(0.95, 1.05, 1); }
+    75% { transform: scale3d(1.05, 0.95, 1); }
+    100% { transform: scale3d(1, 1, 1); }
+}
+
+/* Elástico (Premium) */
+.efx-hover-rubber-band:hover {
+    animation: rubberBand-hover 0.5s ease !important;
+}
+@keyframes rubberBand-hover {
+    0% { transform: scale3d(1, 1, 1); }
+    30% { transform: scale3d(1.25, 0.75, 1); }
+    40% { transform: scale3d(0.75, 1.25, 1); }
+    50% { transform: scale3d(1.15, 0.85, 1); }
+    65% { transform: scale3d(0.95, 1.05, 1); }
+    75% { transform: scale3d(1.05, 0.95, 1); }
+    100% { transform: scale3d(1, 1, 1); }
+}
+
+/* Tada (Premium) */
+.efx-hover-tada:hover {
+    animation: tada-hover 0.5s ease !important;
+}
+@keyframes tada-hover {
+    0% { transform: scale3d(1, 1, 1); }
+    10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+    30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+    40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+    100% { transform: scale3d(1, 1, 1); }
+}
+
+/* Batimento (Premium) */
+.efx-hover-heartbeat:hover {
+    animation: heartbeat-hover 0.5s ease !important;
+}
+@keyframes heartbeat-hover {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
+
+
+        /* CSS Responsivo */
+
+
+        /* CSS Customizado da Página */
+
+
+        /* CSS dos Blocos Custom CSS */
+
+    </style>
+
+</head>
+<body>
+<a id="button_1771720878263_1" href="#" class="" style="background-color:#2196F3; color:#ffffff; padding-top:12px; padding-bottom:12px; padding-left:24px; padding-right:24px; border-top-left-radius:6px; border-top-right-radius:6px; border-bottom-right-radius:6px; border-bottom-left-radius:6px; display:inline-block; text-align:center; cursor:pointer; font-weight:normal; margin-top:0px; margin-right:0px; margin-bottom:10px; margin-left:0px; border-width:1px; border-style:solid; border-color:#cccccc; height:auto; top:auto; bottom:auto; left:auto; right:auto; width:auto; border: none; ; text-decoration:none;">Clique Aqui</a>
+<h2 id="heading_1771741434909_2" class="" style="font-weight:bold; margin-top:0px; margin-right:0px; margin-bottom:10px; margin-left:0px; padding-top:10px; padding-right:10px; padding-bottom:10px; padding-left:10px; border-top-left-radius:0px; border-top-right-radius:0px; border-bottom-right-radius:0px; border-bottom-left-radius:0px; border-width:1px; border-style:solid; border-color:#cccccc; background-color:transparent; color:#333333; text-align:left; height:auto; top:auto; bottom:auto; left:auto; right:auto; border: none; ">Novo Título</h2>
+
+    <script>
+
+
+// Engine de Workflows (Gerado pela IDE)
+window.runCustomToast = function(action) {
+    const toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.backgroundColor = action.bgColor || '#10b981';
+    toast.style.color = '#ffffff';
+    toast.style.padding = '12px 24px';
+    toast.style.borderRadius = '8px';
+    toast.style.display = 'flex';
+    toast.style.alignItems = 'center';
+    toast.style.gap = '10px';
+    toast.style.zIndex = '999999';
+    toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+    toast.style.fontFamily = 'sans-serif';
+    toast.style.fontSize = '14px';
+    
+    // Tratamento de posição dinâmico com keyframes gerados no momento
+    const pos = action.position || 'bottom-center';
+    let keyframes = '';
+    const animId = 'anim_' + Date.now();
+    
+    if (pos === 'bottom-center') {
+        toast.style.bottom = '20px'; toast.style.left = '50%'; toast.style.transform = 'translateX(-50%)';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translate(-50%, 50px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }';
+    } else if (pos === 'top-center') {
+        toast.style.top = '20px'; toast.style.left = '50%'; toast.style.transform = 'translateX(-50%)';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translate(-50%, -50px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }';
+    } else if (pos === 'top-right') {
+        toast.style.top = '20px'; toast.style.right = '20px';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }';
+    } else if (pos === 'top-left') {
+        toast.style.top = '20px'; toast.style.left = '20px';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }';
+    } else if (pos === 'bottom-right') {
+        toast.style.bottom = '20px'; toast.style.right = '20px';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }';
+    } else if (pos === 'bottom-left') {
+        toast.style.bottom = '20px'; toast.style.left = '20px';
+        keyframes = '@keyframes ' + animId + ' { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }';
+    }
+    
+    // Injeta a animação no documento
+    const style = document.createElement('style');
+    style.innerHTML = keyframes;
+    document.head.appendChild(style);
+    
+    // Aplica a animação
+    toast.style.animation = animId + ' 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+    
+    if(action.icon) {
+        toast.innerHTML = '<span class="material-icons" style="font-size:20px;">' + action.icon + '</span> <span>' + action.message + '</span>';
+    } else {
+        toast.innerText = action.message;
+    }
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s';
+        setTimeout(() => {
+            toast.remove();
+            style.remove();
+        }, 400);
+    }, action.duration || 3000);
+};
+
+// Motor Assíncrono para rodar os passos Reais
+window.runWorkflow = async function(actions) {
+    for (const action of actions) {
+        try {
+            switch(action.type) {
+                case 'toast':
+                    window.runCustomToast(action);
+                    break;
+                case 'alert':
+                    alert(action.message);
+                    break;
+                case 'delay':
+                    await new Promise(r => setTimeout(r, action.ms || 1000));
+                    break;
+                case 'redirect':
+                    if(action.delayBefore > 0) await new Promise(r => setTimeout(r, action.delayBefore));
+                    window.open(action.url, action.target || '_self');
+                    break;
+                case 'set_text':
+                    const targetEl = document.getElementById(action.targetId);
+                    if(targetEl) targetEl.innerText = action.newText;
+                    break;
+                case 'toggle_class':
+                    const classEl = document.getElementById(action.targetId);
+                    if(classEl) classEl.classList.toggle(action.className);
+                    break;
+                case 'open_modal':
+                    const modalEl = document.getElementById(action.modalId);
+                    if(modalEl) {
+                        modalEl.style.display = (modalEl.style.display === 'none' || modalEl.style.display === '') ? 'flex' : 'none';
+                    }
+                    break;
+                case 'play_sound':
+                    if(action.soundUrl) {
+                        const audio = new Audio(action.soundUrl);
+                        audio.play().catch(e => console.warn('Erro ao tocar áudio:', e));
+                    }
+                    break;
+                case 'db_insert':
+                case 'db_update':
+                case 'db_delete':
+                case 'db_search':
+                    if(window.location.protocol.includes('http')) {
+                        const resp = await fetch('api.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                action: action.type,
+                                table: action.table,
+                                data: action.data,
+                                where: action.where
+                            })
+                        });
+                        const res = await resp.json();
+                        if(res.success) {
+                            window.runCustomToast({ message: res.message || 'Operação no banco realizada!', bgColor: '#10b981', icon: 'cloud_done', duration: 3000, position: action.position || 'bottom-center' });
+                            if(action.type === 'db_search') {
+                                console.log('Dados encontrados:', res.data);
+                            }
+                        } else {
+                            window.runCustomToast({ message: res.error || 'Erro no banco de dados', bgColor: '#ef4444', icon: 'error', duration: 4000, position: action.position || 'bottom-center' });
+                        }
+                    } else {
+                        console.warn('O Banco de Dados precisa de um servidor PHP para rodar.');
+                    }
+                    break;
+            }
+        } catch(err) {
+            console.error('Erro na ação:', action, err);
+            window.runCustomToast({ message: 'Erro de requisição.', bgColor: '#ef4444', icon: 'wifi_off', duration: 3000, position: action.position || 'bottom-center' });
+        }
+    }
+};
+
+
+    </script>
+</body>
+</html>
